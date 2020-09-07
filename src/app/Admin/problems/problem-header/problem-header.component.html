@@ -1,0 +1,76 @@
+<h1>aa</h1>
+<div>
+  <button type="button" class="btn btn-success mb-3" (click)="AddHeader()">Add Problem Header</button>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+
+     <th>problemid </th>
+
+     <th>problemHead </th>
+
+     <th>problemDescription </th>
+
+     <th>problemImage </th>
+     <th>date </th>
+
+     <th>sourceName </th>
+
+     <th>sourceDescription </th>
+
+     <th>problemSourceImage </th>
+     <th>problemTypee </th>
+
+     <th>problemTypeImage </th>
+
+     <th>problemTDescription </th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let problemJoin of problemJoin">
+
+      <td>{{problemJoin.problemid}}</td>
+
+      <td>{{problemJoin.problemHead}}</td>
+
+      <td>{{problemJoin.problemDescription}}</td>
+
+      <td>{{problemJoin.problemImage}}</td>
+
+      <td>{{problemJoin.date}}</td>
+
+      <td>{{problemJoin.sourceName}}</td>
+      <td>{{problemJoin.sourceDescription}}</td>
+
+      <td>{{problemJoin.problemSourceImage}}</td>
+
+      <td>{{problemJoin.problemTypee}}</td>
+
+      <td>{{problemJoin.problemTypeImage}}</td>
+      <td>{{problemJoin.problemTDescription}}</td>
+      <td>
+        <div>
+          <button type="button" (click)="EditprobType(problemJoin.problemid)" class="btn btn-success">Edit</button>
+        </div>
+      </td>
+
+      <td>
+
+        <button class="btn btn-danger"
+        mwlConfirmationPopover
+        [popoverTitle]="popoverTitle"
+        [popoverMessage]="popoverMessage"
+        placment="left"
+        (confirm)="DeleteProblemHeader(problemJoin.problemid)"
+        (cancel)="cancelClicked=true" >
+        Delete
+        </button>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>

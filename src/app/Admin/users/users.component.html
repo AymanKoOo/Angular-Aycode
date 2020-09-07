@@ -1,0 +1,57 @@
+<h1>ii</h1>
+<div>
+  <button type="button" class="btn btn-success mb-3" (click)="Adduser()">Add User</button>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+     <th>Name</th>
+
+     <th>Email</th>
+
+     <th>Phone Number</th>
+
+     <th>Country</th>
+
+     <th>Edit</th>
+
+     <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+
+      <td>{{user.userName}}</td>
+
+      <td>{{user.email}}</td>
+
+      <td>{{user.phoneNumber}}</td>
+
+      <td>{{user.country}}</td>
+
+      <td>
+        <div>
+          <button type="button" (click)="EditUserClick(user.id)" class="btn btn-success">Edit</button>
+        </div>
+      </td>
+
+      <td>
+
+
+        <button class="btn btn-danger"
+        mwlConfirmationPopover
+        [popoverTitle]="popoverTitle"
+        [popoverMessage]="popoverMessage"
+        placment="left"
+        (confirm)="DeleteUserClick(user.id)"
+        (cancel)="cancelClicked=true" >
+        Delete
+        </button>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>

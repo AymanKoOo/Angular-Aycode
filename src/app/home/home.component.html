@@ -1,0 +1,22 @@
+<body translate="no" class="vsc-initialized">
+
+
+  <div class="row">
+      <div class="col-md-4" *ngFor="let probSources of probSources">
+        <a type="button" (click)="passSource(probSources.sourceName)" class="project">
+          <div class="front">
+            <img src="{{probSources['problemSourceImage']}}">
+          </div>
+          <div class="back">
+            <div class="project-info">
+              <p class="description">{{probSources['sourceDescription']}}</p>
+              <button type="button" (click)="passSource(probSources.sourceName)" class="view-project">View Problems</button>
+
+            </div>
+          </div>
+          <div class="background"></div>
+        </a>
+      </div>
+    </div>
+
+</body>

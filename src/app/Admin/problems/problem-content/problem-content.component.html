@@ -1,0 +1,64 @@
+
+<h1>aa</h1>
+<div>
+  <button type="button" class="btn btn-success mb-3" (click)="AddContent()">Add Problem Content</button>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+
+     <th>contentProblemid </th>
+
+     <th>  contentProblemName </th>
+
+     <th>contentProblemDescription </th>
+
+     <th>contentproblemImage </th>
+     <th>  code </th>
+
+     <th>date </th>
+
+     <th>problemHead </th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let contentJoinModel of contentJoinModel">
+
+      <td>{{contentJoinModel.contentProblemid}}</td>
+
+      <td>{{contentJoinModel.contentProblemName}}</td>
+
+      <td>{{contentJoinModel.contentProblemDescription}}</td>
+
+      <td>{{contentJoinModel.contentproblemImage}}</td>
+
+      <td>{{contentJoinModel.code}}</td>
+
+      <td>{{contentJoinModel.date}}</td>
+      <td>{{contentJoinModel.problemHead}}</td>
+
+      <td>
+        <div>
+          <button type="button" (click)="EditprobType(contentJoinModel.contentProblemid)" class="btn btn-success">Edit</button>
+        </div>
+      </td>
+
+      <td>
+
+        <button class="btn btn-danger"
+        mwlConfirmationPopover
+        [popoverTitle]="popoverTitle"
+        [popoverMessage]="popoverMessage"
+        placment="left"
+        (confirm)="DeleteProblemHeader(contentJoinModel.contentProblemid)"
+        (cancel)="cancelClicked=true" >
+        Delete
+        </button>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>

@@ -1,0 +1,21 @@
+<body translate="no" class="vsc-initialized">
+
+  <div class="row">
+      <div class="col-md-6" *ngFor="let probTypes of probTypes">
+        <a (click)="passSnSt(probTypes.problemTypee)" class="project">
+          <div class="front">
+            <img src="{{probTypes['problemTypeImage']}}">
+          </div>
+          <div class="back">
+            <div class="project-info">
+              <p class="description">{{probTypes['problemTypee']}}</p>
+              <button (click)="passSnSt(probTypes.problemTypee)" class="view-project">View Problems</button>
+
+            </div>
+          </div>
+          <div class="background"></div>
+        </a>
+      </div>
+    </div>
+
+</body>

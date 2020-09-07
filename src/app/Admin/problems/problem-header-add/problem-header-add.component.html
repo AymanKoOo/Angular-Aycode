@@ -1,0 +1,73 @@
+
+
+    <div class="signin-form">
+      <form [formGroup]="ProbSourceForm" (ngSubmit)="addProbHeader()">
+
+        <img src="assets/img/logo.png" alt="User Avatar" class="ml-5 ">
+        <h5>Problem Header</h5>
+
+
+       <div class="or-seperator"><b>or</b></div>
+        <div class="form-group">
+          <label for="exampleUserName">Enter Problem Header Name</label>
+          <input type="text" formControlName="headerName" class="form-control input-lg"
+            aria-describedby="emailHelp" placeholder="Enter Problem Source Name"
+            [ngClass]="{'is-invalid':!this.ProbSourceForm.get('headerName').valid && this.ProbSourceForm.get('headerName').touched}">
+        </div>
+        <div class="form-group">
+          <label for="exampleUserName">Enter Problem Header Description</label>
+          <input type="text" formControlName="headerDesc" class="form-control input-lg"
+            aria-describedby="emailHelp" placeholder="Enter Problem Source Description"
+            [ngClass]="{'is-invalid':!this.ProbSourceForm.get('headerDesc').valid && this.ProbSourceForm.get('headerDesc').touched}">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleUserName">Enter Image</label>
+          <input type="file" formControlName="headerIamge" class="form-control input-lg"
+            aria-describedby="emailHelp" placeholder="Enter Image"
+            [ngClass]="{'is-invalid':!this.ProbSourceForm.get('headerIamge').valid && this.ProbSourceForm.get('headerIamge').touched}">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleUserName">Enter Date</label>
+          <input type="date" formControlName="headerDate" class="form-control input-lg"
+            aria-describedby="emailHelp" placeholder="Enter Image"
+            [ngClass]="{'is-invalid':!this.ProbSourceForm.get('headerDate').valid && this.ProbSourceForm.get('headerDate').touched}">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleUserName">Choose Problem Source</label>
+
+          <select id="probSource" formControlName="sourceSelect"
+            class="form-control input-lg">
+
+          <option *ngFor="let source of probSources" [value]="source.problemSourceID">
+
+            {{source.sourceName}}
+
+          </option>
+
+          </select>
+
+        </div>
+
+        <div class="form-group">
+          <label for="exampleUserName">Choose Problem Type</label>
+
+          <select id="probType" formControlName="typeSelect"
+            class="form-control input-lg">
+
+
+          <option *ngFor="let probType of probType" [value]="probType.problemTypeID">
+
+            {{probType.problemTypee}}
+
+          </option>
+
+          </select>
+        </div>
+
+
+        <button type="submit" class="btn btn-danger btn-lg btn-block signin-btn" [disabled]="!ProbSourceForm.valid">Add</button>
+      </form>
+    </div>

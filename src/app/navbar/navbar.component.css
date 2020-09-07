@@ -1,0 +1,15 @@
+
+
+h1{
+  width: 20%;
+  height: 20%;
+  display: inline-block;
+  transition: width 2s, height 2s, transform 2s;
+  margin-bottom: 20px;
+}
+
+h1:hover {
+  width:7px;
+  height:7px;
+  transform: rotate(50deg);
+}

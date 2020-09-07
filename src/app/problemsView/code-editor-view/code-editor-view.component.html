@@ -1,0 +1,54 @@
+<!-- <div ace-editor
+[(text)]="text"
+[mode]="'csharp'"
+[theme]="'eclipse'"
+[options]="options"
+[readOnly]="false"
+[autoUpdateContent]="true"
+[durationBeforeCallback]="1000"
+(textChanged)="onChange($event)"
+style="min-height: 200px; width:100%; overflow: auto;"></div> -->
+<!-- <div ace-editor
+[(text)]="text"
+
+[theme]="'twilight'"
+[mode]="'csharp'"
+[options]="options"
+[readOnly]="false"
+[autoUpdateContent]="true"
+[durationBeforeCallback]="1000"
+(textChanged)="onChange($event)"
+style="min-height: 200px; width:100%; overflow: auto;"></div> -->
+
+
+<div class="row">
+
+  <div class="col-lg-6">
+
+    <ace-editor  [(ngModel)]="msgDto.msgText"[mode]="'sql'"
+    [text]="text"
+
+                (keyup)="change()"
+                style="min-height: 600px; width:100%;
+                border: 3px solid #f9632e"
+                ></ace-editor>
+
+  </div>
+
+<!--
+<div class="card">
+  <div class="overlay"></div>
+  <div class="card-header">
+    <div class="card-img"></div>
+    <div class="card-title">
+      <h1>{{contentByname['contentProblemName']}}</h1>
+
+    </div>
+  </div>
+  <div class="card-body">
+    <h1>{{contentByname['contentProblemName']}}</h1>
+  </div>
+</div> -->
+</div>
+
+

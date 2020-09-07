@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+
+*,*::before,*::after{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root{
+    --clr-dark: rgb(13,17,19);
+    --clr-light: #fff;
+    --clr-accent: rgb(222,52,0);
+    --clr-accent-dark: rgb(163,38,0);
+    --clr-secondary: rgb(0,62,163);
+}
+
+body{
+    min-height: 60vh;
+    display: grid;
+    place-items: center;
+    font-family: "Roboto",sans-serif;
+}
+
+img{
+    max-width: 100%;
+}
+
+.project{
+    position: relative;
+    max-width: 300px;
+    color: #000;
+    text-decoration: none;
+}
+.project .front{
+    transition: 200ms ease-out;
+}
+.project .front .project-cover{
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #0008;
+}
+.project .front .project-name{
+    margin: 5px;
+    text-align: left;
+    font-size: 1.5rem;
+}
+.project .stats{
+    display: flex;
+    justify-content: space-between;
+}
+.project .stats .tag{
+    font-family: "Roboto Mono", monospace;
+    font-size: .7rem;
+    margin: auto 5px;
+    padding: 5px;
+    background: #323232;
+    color: #fff;
+    border-radius: 3px;
+    border: 1px 1px 2px 1px solid #222;
+    box-shadow: 0 0 10px #0008;
+    text-transform: uppercase;
+}
+.project .tools{
+    display: flex;
+}
+.project .tool{
+    width: 32px;
+    height: 32px;
+    margin: 0 5px;
+}
+
+.project .back{
+    display: none;
+    opacity: 0;
+}
+.project .back .project-info{
+    text-align: center;
+}
+.project .back .project-info .description{
+    transform: translateY(-160%);
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+.project .back .project-info .view-project{
+    transform: translateY(-30%);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+    background-size: 300% 100%;
+    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+    animation: button-background-off 500ms forwards;
+    -webkit-animation: button-background-off 500ms forwards;
+}
+.project .back .project-info .view-project:hover{
+    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.85);
+    animation: button-background-on 500ms forwards;
+    -webkit-animation: button-background-on 500ms forwards;
+}
+.project .background{
+    position: absolute;
+    background: #ddd;
+    border-radius: 5px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    transform: scale(.3);
+    opacity: 0;
+}
+
+
+.project:hover .front{
+    transform: translateY(-20%);
+}
+.project:hover .front .project-cover{
+    box-shadow: 0 4px 12px #0008;
+}
+.project:hover .front .project-name{
+    font-size: 2.1rem;
+    animation: project-name 80ms forwards;
+    -webkit-animation:project-name 80ms forwards;
+}
+.project:hover .back{
+    display: block;
+    animation: fade-in 400ms ease-out forwards 50ms;
+    -webkit-animation: fade-in 400ms ease-out forwards 50ms;
+}
+.project:hover .background{
+    transform: scale(1.2,1.1);
+    opacity: 1;
+    background: #fff;
+    box-shadow: 0 0 8px #0004;
+    background-size: 100%;
+    background-position: top;
+    transition: transform 170ms 50ms cubic-bezier(0,.6,0,1), opacity 100ms linear;
+}
+.project:hover .front .stats{
+    display: none;
+}
+.project:hover .stats{
+    margin-top: 25px;
+}
+.project:hover .stats .tools{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    animation: swipe-up 500ms forwards;
+    -webkit-animation: swipe-up 500ms forwards;
+}
+.project:hover .stats .tools p{
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: .95rem;
+}
+.project:hover .stats .tool{
+    width: 42px;
+    height: 42px;
+}
+
+@keyframes project-name{
+    0%{
+        opacity: 1;
+        text-align: left;
+    }
+    33%{
+        opacity: 0;
+        text-align: left;
+    }
+    66%{
+        opacity: 0;
+        text-align: center;
+    }
+    100%{
+        opacity: 1;
+        text-align: center;
+    }
+}
+@keyframes fade-in{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes button-background-on{
+    0%{
+        background-position: left;
+    }
+    100%{
+        background-position: right;
+    }
+}
+@keyframes button-background-off{
+    0%{
+        background-position: right;
+    }
+    100%{
+        background-position: left;
+    }
+}
+@keyframes swipe-up{
+    0%{
+        transform: translateY(50%);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
