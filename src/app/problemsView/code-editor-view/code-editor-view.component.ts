@@ -1,13 +1,17 @@
+import { people } from './../../models/people';
+import { FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Component,ViewChild,OnInit } from '@angular/core';
 import { AdminService } from 'src/app/services/admin.service';
 import { ActivatedRoute, Router } from '@angular/router';
+
 
 import 'brace';
 import 'brace/mode/sql';
 import { contentByname } from 'src/app/models/contentByname';
 import * as signalR from '@microsoft/signalr';
 import { MessageDto } from 'src/app/models/MessageDto';
+import { Console } from 'console';
 
 @Component({
   selector: 'app-code-editor-view',
@@ -17,12 +21,11 @@ import { MessageDto } from 'src/app/models/MessageDto';
 
 export class CodeEditorViewComponent implements OnInit {
 
-  // text:string = "";
-  // options:any = {maxLines: 1000, printMargin: false};
-
-  // onChange(code) {
-  //     console.log("new code", code);
-  // }
+  k:number=0;
+  peoplee: people[] = [
+    { id: 0 ,
+      name: 'All' }
+  ];
 
   options:any = {maxLines: 1000, printMargin: false};
 
@@ -34,11 +37,13 @@ export class CodeEditorViewComponent implements OnInit {
 
   contentByname:contentByname;
 
-  ///1//Connection//
+  /////1 Connection//
   private  connection: any = new signalR.HubConnectionBuilder().withUrl("http://localhost:50455/chatsocket")   // mapping to the chathub as in startup.cs
   .configureLogging(signalR.LogLevel.Information)
   .build();
+  /////////////////
 
+  //////
   msgDto: MessageDto = new MessageDto();
   public async start() {
     try {
@@ -50,41 +55,95 @@ export class CodeEditorViewComponent implements OnInit {
     }
   }
 
+
   text:string = this.msgDto.msgText;
+  msg:string;
+  group:string;
+  method:string="All";
+  selectSize:number=0;
+  groupValue:string="";
+
   ngOnInit(): void {
     ///Connection Start////
     this.connection.onclose(async () => {
       await this.start();
     });
-    //////////////////////
+    ///2///////////////////
     this.connection.on("ReceiveText", (text) => {
       this.msgDto.msgText = text;
+
+      // if(this.choose==true){
+        var newDiv = document.createElement("div");
+        newDiv.innerHTML=this.msgDto.msgText;
+        document.getElementById("messages").appendChild(newDiv);
+
+      console.log("msgDto"+text);
      });
+     ///////send message to specific user/////
+     this.connection.on("UserConnected", (connectionId) => {
+
+    let customObj = new people();
+    customObj.id = this.k;
+    customObj.name = connectionId;
+    this.peoplee.push(customObj);
+    console.log(this.peoplee.length);
+    });
+
+    this.connection.on("UserDisconnected",(connectionId)=>{
+      var size = this.peoplee.length;
+      for(var i=0;i<size;i++){
+        if(i>-1&&this.peoplee[i].name==connectionId){
+          this.peoplee.splice(i, 1);
+        }
+
+      }
+    })
     this.start();
-    ///////////
-
-    this.contentByname=null;
-    this.activateRoute.paramMap.subscribe(param=>{
-      var contentName = param.get('contentName');
-      this.service.GetprobContentByName(contentName).subscribe(sucess=>{
-        this.contentByname=sucess;
-        console.log(this.contentByname);
-      },err=>{
-        console.log(err);
-      })
-    },)
   }
-
-
-  ///////////////////////////////////
+///////////////////////////////////
 // Calls the controller method
 public change() {
-   let POST_URL = "http://localhost:50455/api/chat/write"
-   this.http.post(POST_URL,this.msgDto).subscribe(data => console.log(data),err=>console.log(err));
-  // this.connection.invoke("SendMessage1", msgDto.user, msgDto.msgText).catch(err => console.error(err));    // This can invoke the server method named as "SendMethod1" directly.
+    this.connection.invoke("codeEditor",this.msgDto.msgText).catch(function (err) {
+    console.log(err)});
 }
 
-// public retrieveMappedObject(): Observable<MessageDto> {
-//   return this.sharedObj.asObservable();
-// }
+
+public send() {
+  if(this.group=="All"){
+    this.connection.invoke("SendMessageToAll",this.msgDto.msgText).catch(function (err) {
+      console.log(err)});
+  }
+
+  else if(this.groupValue=="PrivateGroup"){
+
+    this.connection.invoke("SendMessageToGroup","PrivateGroup",this.msgDto.msgText).catch(function (err) {
+      console.log(err);
+  });
+  }
+
+  else{
+    this.connection.invoke("SendMessageToUser",this.group,this.msgDto.msgText).catch(function (err) {
+      console.log(err);
+  });
 }
+}
+
+
+public GetId(){
+  this.groupValue="PrivateGroup";
+  this.connection.invoke('joingroup',"PrivateGroup")
+    .catch(function (err) {
+        console.log(err);
+    });
+    console.log("joined");
+
+}
+
+}
+
+
+///live code
+//send all
+//send to user
+///////////////
+//Create room// who join can chat

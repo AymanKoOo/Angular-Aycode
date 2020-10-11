@@ -30,7 +30,6 @@ export class ProblemContentViewComponent implements OnInit {
     },err=>{
       console.log(err);
     })
-
   };
 
  getCode(contentName:string){
