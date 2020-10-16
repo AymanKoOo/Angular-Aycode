@@ -41,8 +41,8 @@ export class ProblemHeaderAddComponent implements OnInit {
       problemDescription:'',
       problemImage:'',
       date:null,
-      problemSourceID:-1,
-      problemTypeID:-1,
+      problemSource:'',
+      problemType:'',
     }
 
     this.FprobHeaderModel = {
@@ -83,7 +83,8 @@ export class ProblemHeaderAddComponent implements OnInit {
 ////////////////////////////////////////////////////
     this.servAdmin.GetAllprobSource().subscribe(success=>{
       this.probSources=success;
-      console.log("got sources");
+      console.log(this.probSources);
+      console.log( "sourcess");
       },err=>{
           console.log(err);
       })
@@ -92,6 +93,7 @@ export class ProblemHeaderAddComponent implements OnInit {
 
     this.servAdmin.GetAllprobType().subscribe(success=>{
         this.probType=success;
+        console.log(this.probType);
         console.log("got type");
     },err=>{
         console.log(err);
@@ -119,9 +121,11 @@ export class ProblemHeaderAddComponent implements OnInit {
         problemDescription:this.ProbSourceForm.value.headerDesc,
         problemImage:this.ProbSourceForm.value.headerIamge,
         date:this.ProbSourceForm.value.headerDate,
-        problemSourceID:parseInt(this.ProbSourceForm.value.sourceSelect),
-        problemTypeID:parseInt(this.ProbSourceForm.value.typeSelect)
+        problemType:this.ProbSourceForm.value.typeSelect,
+        problemSource:this.ProbSourceForm.value.sourceSelect
       }
+
+      console.log(this.probHeaderModel);
 
       console.log(typeof(this.ProbSourceForm.value.headerDate));
       this.servAdmin.AddprobHeader(this.probHeaderModel).subscribe(success => {

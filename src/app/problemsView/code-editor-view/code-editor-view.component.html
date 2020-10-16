@@ -23,20 +23,20 @@ style="min-height: 200px; width:100%; overflow: auto;"></div> -->
 
 <div class="row">
 
+
   <div class="col-lg-6">
 
-    <ace-editor [(ngModel)]="msgDto.msgText" [mode]="'sql'" [text]="text" (keyup)="change()" style="min-height: 600px; width:100%;
+    <ace-editor [(ngModel)]="msgDto.code" [mode]="'sql'" [text]="code" (keyup)="change()" style="min-height: 600px; width:100%;
                 border: 3px solid #f9632e"></ace-editor>
   </div>
 
 
 
-
-
   <div class="col-lg-6">
 
-    <input type="button" id="sendButton" (click)="GetId()" value="Join" />
-
+    <div class="inviteMsg">
+    <h2>Room ID is {{this.roomname}} Share it with you friends</h2>
+    </div>
     <!-- <h1>Stack</h1>
           <button type="button" (click)="createRoom()" class="view-project">Create Room</button>
         <h1>The stack is one of the most important data structures in computer science. To understand how a stack works,
@@ -44,11 +44,6 @@ style="min-height: 200px; width:100%; overflow: auto;"></div> -->
           want to look at the top card, there are two things we can do: we can peek at it, but leave it on the stack, or
           we can pop it off. When we pop off the top object, we are taking it off the stack. If we want to add another
           card to the top of the stack, we push.</h1> -->
-
-    <textarea [(ngModel)]="msgDto.msgText" name="message" id="message">
-
-          </textarea>
-
 
 
     <select id="people" name="people" [(ngModel)]="group" class="form-control">
@@ -59,6 +54,44 @@ style="min-height: 200px; width:100%; overflow: auto;"></div> -->
 
     <input type="button" id="sendButton" (click)="send()" value="Send Message" />
     <div id="messages"></div>
+    <div id="live-chat">
+
+      <header class="clearfix">
+
+          <input type="button" class="chat-close" (click)="toggleChat()" value="x" />
+
+          <h4>Room Chat</h4>
+
+          <span class="chat-message-counter">3</span>
+
+      </header>
+
+      <div class="chat">
+
+          <div class="chat-history">
+
+            <div id="message">
+
+
+            </div>
+
+
+          </div> <!-- end chat-history -->
+
+          <form action="#" method="post">
+
+              <fieldset>
+
+                  <input [(ngModel)]="msgDto.msgText"  (keyup.enter)="send()" name="message" id="messageee" type="text" placeholder="Type your message…" autofocus>
+                  <input type="button" (click)="send()" id="send">
+
+              </fieldset>
+
+          </form>
+
+      </div> <!-- end chat -->
+
+  </div> <!-- end live-chat -->
   </div>
 
 

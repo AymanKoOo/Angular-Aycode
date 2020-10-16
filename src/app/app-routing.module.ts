@@ -65,6 +65,9 @@ const routes: Routes = [
 
 {path: 'chatPage', component: ChatviewComponent,canActivate:[AuthGuard]},
 
+{path: 'codeEditor/:roomID', component: CodeEditorViewComponent,canActivate:[AuthGuard]},
+{path: 'codeEditor/:roomID', component: CodeEditorViewComponent,canActivate:[AuthGuard]},
+
 ]
 
 @NgModule({

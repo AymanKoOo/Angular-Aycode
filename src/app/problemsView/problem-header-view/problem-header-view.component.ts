@@ -40,9 +40,7 @@ export class ProblemHeaderViewComponent implements OnInit {
   }
 
   getContent(ProblemName:string){
-
     this.router.navigate(['/getContent',ProblemName]);
-
   }
 
 }

@@ -4,8 +4,9 @@ export class probHeaderModel{
   problemDescription:string;
   problemImage:string;
   date:Date;
-
-  problemSourceID:number;
-  problemTypeID:number;
+  problemType:string;
+  problemSource:string;
 }
+
+
 

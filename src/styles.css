@@ -1,8 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 @import "E:/aymanKoSolvee/frontEndAngular/PaymentSystem/node_modules/ag-grid-community/dist/styles/ag-grid.css";
 @import "E:/aymanKoSolvee/frontEndAngular/PaymentSystem/node_modules/ag-grid-community/dist/styles/ag-theme-balham.css";
-.body {
-  color: #434343;
-  background: #dfe7e9;
-  font-family: 'Varela Round', sans-serif;
-}
+
+

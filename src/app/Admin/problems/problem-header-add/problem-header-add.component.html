@@ -41,7 +41,7 @@
           <select id="probSource" formControlName="sourceSelect"
             class="form-control input-lg">
 
-          <option *ngFor="let source of probSources" [value]="source.problemSourceID">
+          <option *ngFor="let source of probSources" [value]="source.sourceName">
 
             {{source.sourceName}}
 
@@ -58,7 +58,7 @@
             class="form-control input-lg">
 
 
-          <option *ngFor="let probType of probType" [value]="probType.problemTypeID">
+          <option *ngFor="let probType of probType" [value]="probType.problemTypee">
 
             {{probType.problemTypee}}
 
