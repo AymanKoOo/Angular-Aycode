@@ -34,6 +34,7 @@ import { CodeEditorViewComponent } from './problemsView/code-editor-view/code-ed
 
 import { AceEditorModule } from 'ng2-ace-editor';
 import { ChatviewComponent } from './chatview/chatview.component';
+import { SideBarComponent } from './side-bar/side-bar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,6 +60,7 @@ import { ChatviewComponent } from './chatview/chatview.component';
     ProblemContentViewComponent,
     CodeEditorViewComponent,
     ChatviewComponent,
+    SideBarComponent,
 
   ],
   imports: [

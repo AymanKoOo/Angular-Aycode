@@ -1,8 +1,11 @@
+import { AdminService } from 'src/app/services/admin.service';
 import { CryptService } from './../services/crypt.service';
 import { AuthService } from './../services/auth.service';
 import { Route } from '@angular/compiler/src/core';
 import { RegisterServiceService } from './../services/register-service.service';
 import { Component, OnInit } from '@angular/core';
+
+import { userDetails } from 'src/app/models/usersDetails';
 
 @Component({
   selector: 'app-navbar',
@@ -11,26 +14,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private service:RegisterServiceService,private authS:AuthService,private cryptS:CryptService) { }
+  constructor(private service:RegisterServiceService,private authS:AuthService,private cryptS:CryptService,private adminSrv:AdminService) { }
   title = 'AymanKoSolve';
+  userDetails:userDetails;
   ngOnInit() {
-  //   const email=localStorage.getItem('email');
-  //   const expire=localStorage.getItem('expire');
-  //   const role=localStorage.getItem('role');
 
-  //   if(email!=null&&expire!=null&&role!=null){
-  //   if(this.authS.CheckStorage()===false){
-  //     this.LogOut();
-  //   }
-  // }
+
   }
 
   LogOut(){
-      this.service.LogOut().subscribe(sucess=>{
-        localStorage.clear();
-      
-        console.log("loged out");
-      },err=>console.log(err))
+      // this.service.LogOut().subscribe(sucess=>{
+
+      // },err=>console.log(err))
+      localStorage.clear();
+      console.log("loged out");
   }
 
 
@@ -45,15 +42,13 @@ export class NavbarComponent implements OnInit {
      else return false;
   }
 
-  isAdmin(){
 
-    if(true){
+  getUserDetails(){
+    this.adminSrv.GetAllUserData().subscribe(succs=>{
+      this.userDetails=succs;
+    },erro=>{
+      console.log(erro);
+    })
+}
 
-     return true;
-
-    }
-
-
-    return false;
-  }
 }

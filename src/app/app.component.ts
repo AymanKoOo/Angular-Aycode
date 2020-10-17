@@ -1,9 +1,11 @@
+import { AdminService } from 'src/app/services/admin.service';
 import { CryptService } from './services/crypt.service';
 import { Component } from '@angular/core';
 import {Router} from "@angular/router"
 import { RegisterServiceService } from './services/register-service.service';
 import * as $ from "jquery";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { IsAdmin } from './models/IsAdmin';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,7 +13,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class AppComponent {
 
-  constructor(private service:RegisterServiceService,private serv:CryptService,private router:Router,private fb:FormBuilder){}
+  constructor(private service:RegisterServiceService,private serv:CryptService,private router:Router,private fb:FormBuilder,private admin :AdminService){}
   messageValidate={
     roomName:{
       required:'Enter room Name',
@@ -20,12 +22,45 @@ export class AppComponent {
   }
   roomForm : FormGroup;
   roomname:string;
+  IsAdmin:IsAdmin;
+  AdminCheck:Boolean;
 
 ngOnInit(): void {
   this.roomForm = this.fb.group({
     roomName:['',Validators.required],
   });
+  if(localStorage.getItem('token')!=null){
+    this.IsAdminn();
+ }
+
 }
+////
+
+LoggedToken(){
+  if(localStorage.getItem('token')!=null){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+
+IsAdminn(){
+  this.admin.IsAdmin().subscribe(sucess=>{
+    this.IsAdmin=sucess;
+    this.AdminCheck=this.IsAdmin.IsAdminn;
+
+  }),err=>{
+    console.log(err);
+  }
+}
+
+
+
+
+////
+
+
 
 LogOut(){
   localStorage.removeItem('token');

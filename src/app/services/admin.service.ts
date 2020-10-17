@@ -18,6 +18,9 @@ import { problemJoin } from '../models/problems/problemJoin';
 import { GetHeaderFromJoin } from '../models/GetHeaderFromJoin';
 import { GetprobContentJ } from '../models/GetprobContentJ';
 import { contentByname } from '../models/contentByname';
+import { IsAdmin } from '../models/IsAdmin';
+import { userDetails } from '../models/usersDetails';
+
 
 @Injectable({
   providedIn: 'root'
@@ -162,5 +165,16 @@ GetprobContentByName(probContentName:string):Observable<contentByname>{
   console.log(this.baseUrl+'GetprobcontentbyName?probName='+probContentName);
   return this.http.post<contentByname>(this.baseUrl+'GetprobcontentbyName?probName='+probContentName,null,{headers:this.headers}).pipe();
 }
+
+IsAdmin():Observable<IsAdmin>{
+  return this.http.get<IsAdmin>(this.baseUrl+'IsAdmin',{headers:this.headers}).pipe();
+}
+
+
+GetAllUserData():Observable<userDetails>{
+  return this.http.get<userDetails>(this.baseUrl+'GetAllUserData',{headers:this.headers}).pipe();
+}
+
+
 }
 

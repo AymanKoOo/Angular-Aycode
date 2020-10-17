@@ -1,15 +1,50 @@
+.nav-link:hover{
+
+  border-bottom:3px solid red;
+
+}
 
 
-h1{
-  width: 20%;
-  height: 20%;
+
+.logoo:hover {
+
+  background: url("/assets/logob.png") no-repeat;
+
+}
+/* <img src="assets/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image"> */
+/* <img style="  height: 100px;" src="assets/img/logo.png"> */
+
+.logo {
+
+
+
+  position: relative;
+
   display: inline-block;
-  transition: width 2s, height 2s, transform 2s;
-  margin-bottom: 20px;
+
 }
 
-h1:hover {
-  width:7px;
-  height:7px;
-  transform: rotate(50deg);
+.logo .img-top {
+
+  display: none;
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  z-index: 99;
+
 }
+
+.logo:hover .img-top {
+
+  display: inline;
+
+}
+
+.control-sidebar{
+  width: 25%;
+}
+

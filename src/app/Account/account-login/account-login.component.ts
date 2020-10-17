@@ -38,8 +38,7 @@ export class AccountLoginComponent implements OnInit {
   ngOnInit(): void {
 
     if(localStorage.getItem('token')!=null){
-
-  this.router.navigate(['/home']);
+       this.router.navigate(['/home']);
     }
 
     this.users=[];
