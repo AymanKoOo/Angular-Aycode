@@ -21,21 +21,16 @@ style="min-height: 200px; width:100%; overflow: auto;"></div> -->
 style="min-height: 200px; width:100%; overflow: auto;"></div> -->
 
 
-<div class="row">
+  <div class="row">
+
+    <ace-editor class="resizable" [(ngModel)]="msgDto.code" [mode]="'csharp'" [text]="code" (keyup)="change()" style="width: 791px; height: 710px;">
+    </ace-editor>
 
 
-  <div class="col-lg-6">
-
-    <ace-editor [(ngModel)]="msgDto.code" [mode]="'sql'" [text]="code" (keyup)="change()" style="min-height: 600px; width:100%;
-                border: 3px solid #f9632e"></ace-editor>
-  </div>
-
-
-
-  <div class="col-lg-6">
+  <div class="col-sm-6">
 
     <div class="inviteMsg">
-    <h2>Room ID is {{this.roomname}} Share it with you friends</h2>
+      <h2>Room ID is {{this.roomname}} Share it with you friends</h2>
     </div>
     <!-- <h1>Stack</h1>
           <button type="button" (click)="createRoom()" class="view-project">Create Room</button>
@@ -58,42 +53,40 @@ style="min-height: 200px; width:100%; overflow: auto;"></div> -->
 
       <header class="clearfix">
 
-          <input type="button" class="chat-close" (click)="toggleChat()" value="x" />
+        <input type="button" class="chat-close" (click)="toggleChat()" value="x" />
 
-          <h4>Room Chat</h4>
+        <h4>Room Chat</h4>
 
-          <span class="chat-message-counter">3</span>
+        <span class="chat-message-counter">3</span>
 
       </header>
 
       <div class="chat">
 
-          <div class="chat-history">
+        <div class="chat-history">
 
-            <div id="message">
-
-
-            </div>
+          <div id="message">
 
 
-          </div> <!-- end chat-history -->
+          </div>
 
-          <form action="#" method="post">
 
-              <fieldset>
+        </div> <!-- end chat-history -->
 
-                  <input [(ngModel)]="msgDto.msgText"  (keyup.enter)="send()" name="message" id="messageee" type="text" placeholder="Type your message…" autofocus>
-                  <input type="button" (click)="send()" id="send">
+        <form action="#" method="post">
 
-              </fieldset>
+          <fieldset>
 
-          </form>
+            <input [(ngModel)]="msgDto.msgText" (keyup.enter)="send()" name="message" id="messageee" type="text"
+              placeholder="Type your message…" autofocus>
+            <input type="button" (click)="send()" id="send">
+
+          </fieldset>
+
+        </form>
 
       </div> <!-- end chat -->
 
-  </div> <!-- end live-chat -->
+    </div> <!-- end live-chat -->
   </div>
-
-
-
 </div>

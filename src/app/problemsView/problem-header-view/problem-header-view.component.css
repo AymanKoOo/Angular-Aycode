@@ -5,13 +5,17 @@
 }
 
 .container {
-	padding: 70px 0;
-}
-.card {
-	position: relative;
 
+}
+.row{
+  padding-top: 10%;
+}
+.cardd {
+
+	position: relative;
+  width: 340px;
 	height: 170px;
-  background-color: whitesmoke;
+  background-color: #5cb85c;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -20,24 +24,32 @@
 	transition: 0.25s ease-in;
 }
 
-.card .overlay {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	width: 100%;
+.medium{
+	position: relative;
+  width: 340px;
 	height: 170px;
-  background: linear-gradient( 120.55deg, rgba(208, 108, 108, 0.68) 0%, rgba(39, 39, 39, 0.2394) 100% );
-
+  background-color: yellow;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	border-radius: 25px;
+	margin: 10px;
+	transition: 0.25s ease-in;
 }
-
-.card .content {
+.cardd .card-word{
+  text-align: center;
+  padding-top: 15%;
+}
+.cardd h1{
+  color: white;
+}
+.cardd .content {
 	position: absolute;
 	bottom: 10px;
 	left: 25px;
 }
 
-.card .content h4 {
+.cardd .content h4 {
 	font-family: Ubuntu;
 	font-style: normal;
 	font-weight: bold;
@@ -47,7 +59,7 @@
 	margin-top: 0;
 }
 
-.card .content h6 {
+.cardd .content h6 {
 	font-family: Ubuntu;
 	font-style: normal;
 	font-weight: 500;
@@ -57,22 +69,22 @@
 	margin-top: 0;
 }
 
-.card .fav {
+.cardd .fav {
 	position: absolute;
 	top: 25px;
 	right: 25px;
 	cursor: pointer;
 }
 
-.card .fav i {
+.cardd .fav i {
 	color: white;
 }
 
-.card:hover {
+.cardd:hover {
 	transform: scale(1.05);
 }
 
-.card:hover {
+.cardd:hover {
 	background-position: top;
 }
 

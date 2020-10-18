@@ -9,6 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import * as $ from "jquery";
 import 'brace';
 import 'brace/mode/sql';
+import 'brace/mode/csharp';
 import { contentByname } from 'src/app/models/contentByname';
 import * as signalR from '@microsoft/signalr';
 import { MessageDto } from 'src/app/models/MessageDto';
@@ -81,6 +82,7 @@ export class CodeEditorViewComponent implements OnInit {
       roomName:['',Validators.required],
 
     });
+
 
     this.contentByname=null;
 

@@ -184,3 +184,14 @@ p { margin: 0; }
 
     color: #a0252b;
 }
+
+
+.resizable {
+  overflow: scroll;
+  resize: both;
+  max-width: auto;
+  max-height: auto;
+  border: 1px solid black;
+  min-width: 500px;
+  min-height: 500px;
+}

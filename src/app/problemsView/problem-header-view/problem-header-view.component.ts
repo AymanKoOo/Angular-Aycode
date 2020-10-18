@@ -14,20 +14,22 @@ export class ProblemHeaderViewComponent implements OnInit {
   constructor(private service:AdminService,private activateRoute:ActivatedRoute,private router:Router) { }
 
   GetHeaderFromJoin:GetHeaderFromJoin[];
-
+  sourceName:string;
   ngOnInit(): void {
   console.log("aa");
     this.GetHeaderFromJoin=null;
 
     this.activateRoute.paramMap.subscribe(param=>{
-      var sourceName=param.get('sourceName');
+       this.sourceName=param.get('sourceName');
+
       var sourceType=param.get('sourceType');
-      this.GetproSource(sourceType,sourceName);
-      if(sourceName&&sourceType){
-        console.log(sourceName);
+      this.GetproSource(sourceType,this.sourceName);
+      if(this.sourceName&&sourceType){
+        console.log(this.sourceName);
         console.log(sourceType);
       }
     },)
+    this.changeCardColor();
   }
 
   GetproSource(sourceType,sourceName,){
@@ -43,4 +45,11 @@ export class ProblemHeaderViewComponent implements OnInit {
     this.router.navigate(['/getContent',ProblemName]);
   }
 
+  changeCardColor(){
+    var card = document.querySelector('.cardd');
+
+      card.classList.replace("cardd", "medium");
+
+  
+  }
 }

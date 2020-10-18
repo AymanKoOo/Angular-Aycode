@@ -11,7 +11,7 @@ import { IsAdmin } from 'src/app/models/IsAdmin';
 export class SideBarComponent implements OnInit {
 
   constructor(private admin :AdminService) { }
-  IsAdmin:IsAdmin;
+IsAdmin:IsAdmin;
   AdminCheck:Boolean;
   ngOnInit(): void {
 
