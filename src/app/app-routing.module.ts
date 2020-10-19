@@ -1,3 +1,4 @@
+import { FirstPageComponent } from './first-page/first-page.component';
 import { AuthGuard } from './auth/auth.guard';
 import { ChatviewComponent } from './chatview/chatview.component';
 import { CodeEditorViewComponent } from './problemsView/code-editor-view/code-editor-view.component';
@@ -25,7 +26,7 @@ import { ProblemHeaderViewComponent } from './problemsView/problem-header-view/p
 import { ProblemContentViewComponent } from './problemsView/problem-content-view/problem-content-view.component';
 
 const routes: Routes = [
-{path: '', component: HomeComponent,pathMatch:'full'},
+{path: '', component: FirstPageComponent,pathMatch:'full'},
 {path: 'home', component: HomeComponent,canActivate:[AuthGuard]},
 {path: 'login', component: AccountLoginComponent},
 {path: 'register', component: AccountRegisterComponent},
