@@ -34,53 +34,102 @@
 
   </div>
 </div> -->
-<div class="signin-form">
 
-<form [formGroup]="userForm" (ngSubmit)="loginJwt()">
+<!-- <div class="container mt-4 mb-4">
+  M
 
-  <img src="assets/img/logo.png" alt="User Avatar" class="ml-5 ">
+  <div class="col-md-5 ">
+    <h5>Login</h5>
+    <hr>
+    <div class="loginn">
+      <form [formGroup]="userForm" (ngSubmit)="login()">
 
-  <h2>Sign in</h2>
-      <p class="hint-text ">Sign in with your social media account</p>
-  <div class="flex-c-m">
-    <a href="#" class="login100-social-item bg1">
-      <i class="fa fa-facebook"></i>
-    </a>
-    <a href="#" class="login100-social-item bg2">
-    <i class="fa fa-twitter"></i>
-    </a>
-    <a href="#" class="login100-social-item bg3">
-    <i class="fa fa-google"></i>
-    </a>
-  </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1"
+            aria-describedby="emailHelp" placeholder="Enter email"
+            [ngClass]="{'is-invalid':!this.userForm.get('email').valid}">
 
-  <div class="or-seperator"><b>or</b></div>
-      <div class="form-group">
-        <input type="email" formControlName="email" class="form-control input-lg" id="exampleInputEmail1"
-        aria-describedby="emailHelp" placeholder="Enter email"
-        [ngClass]="{'is-invalid':!this.userForm.get('email').valid}">
 
-      </div>
-      <div class="form-group">
-         <input type="password" formControlName="passowrd" class="form-control input-lg" id="exampleInputPassword1"
-          placeholder="Password"
-          [ngClass]="{'is-invalid':!this.userForm.get('passowrd').valid && this.userForm.get('passowrd').touched}">
+        </div>
 
-      </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" formControlName="passowrd" class="form-control" id="exampleInputPassword1"
+            placeholder="Password"
+            [ngClass]="{'is-invalid':!this.userForm.get('passowrd').valid && this.userForm.get('passowrd').touched}">
 
+        </div>
         <div class="form-group">
           <input type="checkbox" formControlName="rembeberMe" id="rembeberMe">
           <label class="pr-2" for="passowrd">Rember me</label>
         </div>
 
-      <div class="form-group">
-            <button type="submit" class="btn btn-danger btn-lg btn-block signin-btn" [disabled]="!userForm.valid">Sign in</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!userForm.valid">Login</button>
+      </form>
+    </div>
+
+  </div>
+</div> -->
+
+
+<div class="container">
+
+  <div class="row-padding">
+
+    <div class="col-12">
+
+
+      <div class="signin-form">
+
+        <form [formGroup]="userForm" (ngSubmit)="loginJwt()">
+
+          <img src="assets/img/logoUp.png" alt="User Avatar" style="margin-left: 30%;">
+
+          <h2>Sign in</h2>
+          <p class="hint-text ">Sign in with your social media account</p>
+          <div class="flex-c-m">
+            <a href="#" class="login100-social-item bg1">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="login100-social-item bg2">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="login100-social-item bg3">
+              <i class="fa fa-google"></i>
+            </a>
+          </div>
+
+          <div class="or-seperator"><b>or</b></div>
+          <div class="form-group">
+            <input type="email" formControlName="email" class="form-control input-lg" id="exampleInputEmail1"
+              aria-describedby="emailHelp" placeholder="Enter email"
+              [ngClass]="{'is-invalid':!this.userForm.get('email').valid}">
+
+          </div>
+          <div class="form-group">
+            <input type="password" formControlName="passowrd" class="form-control input-lg" id="exampleInputPassword1"
+              placeholder="Password"
+              [ngClass]="{'is-invalid':!this.userForm.get('passowrd').valid && this.userForm.get('passowrd').touched}">
+
+          </div>
+
+          <div class="form-group">
+            <input type="checkbox" formControlName="rembeberMe" id="rembeberMe">
+            <label class="pr-2" for="passowrd">Rember me</label>
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-danger btn-lg btn-block signin-btn" [disabled]="!userForm.valid">Sign
+              in</button>
+          </div>
+
+
+          <div class="text-center small"><a style="color:red" href="#">Forgot Your password?</a></div>
+          <div class="text-center small" style="color:red">Don't have an account?<a routerLink="/register"
+            style="color:red">Sign up</a></div>
+        </form>
       </div>
-
-
-      <div class="text-center small"><a style="color:red" href="#">Forgot Your password?</a></div>
-  </form>
-  <div class="text-center small"style="color:red">Don't have an account?<a routerLink="/register" style="color:red">Sign up</a></div>
-
+    </div>
+  </div>
 </div>
-

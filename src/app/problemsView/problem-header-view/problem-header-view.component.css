@@ -10,9 +10,9 @@
 .row{
   padding-top: 10%;
 }
-.cardd {
 
-	position: relative;
+.easy{
+  position: relative;
   width: 340px;
 	height: 170px;
   background-color: #5cb85c;
@@ -23,12 +23,11 @@
 	margin: 10px;
 	transition: 0.25s ease-in;
 }
-
 .medium{
 	position: relative;
   width: 340px;
 	height: 170px;
-  background-color: yellow;
+  background-color: #f0ad4e;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -36,20 +35,46 @@
 	margin: 10px;
 	transition: 0.25s ease-in;
 }
-.cardd .card-word{
+.cardd{
+  position: relative;
+  width: 340px;
+  height: 170px;
+  background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-radius: 25px;
+	margin: 10px;
+	transition: 0.25s ease-in;
+}
+.hard{
+	position: relative;
+  width: 340px;
+	height: 170px;
+  background-color: #d9534f;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-radius: 25px;
+	margin: 10px;
+	transition: 0.25s ease-in;
+}
+
+
+
+.easy .card-word{
   text-align: center;
   padding-top: 15%;
 }
-.cardd h1{
+.easy h1{
   color: white;
 }
-.cardd .content {
+.easy .content {
 	position: absolute;
 	bottom: 10px;
 	left: 25px;
 }
 
-.cardd .content h4 {
+.easy .content h4 {
 	font-family: Ubuntu;
 	font-style: normal;
 	font-weight: bold;
@@ -59,7 +84,7 @@
 	margin-top: 0;
 }
 
-.cardd .content h6 {
+.easy .content h6 {
 	font-family: Ubuntu;
 	font-style: normal;
 	font-weight: 500;
@@ -69,25 +94,131 @@
 	margin-top: 0;
 }
 
-.cardd .fav {
+.easy .fav {
 	position: absolute;
 	top: 25px;
 	right: 25px;
 	cursor: pointer;
 }
 
-.cardd .fav i {
+.easy .fav i {
 	color: white;
 }
 
-.cardd:hover {
+.easy:hover {
 	transform: scale(1.05);
 }
 
-.cardd:hover {
+.easy:hover {
 	background-position: top;
 }
 
 .h1{
   color: whitesmoke;
+}
+
+
+.medium .card-word{
+  text-align: center;
+  padding-top: 15%;
+}
+.medium h1{
+  color: white;
+}
+.medium .content {
+	position: absolute;
+	bottom: 10px;
+	left: 25px;
+}
+
+.medium .content h4 {
+	font-family: Ubuntu;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	color: #f2f2f2;
+	margin-bottom: 10px;
+	margin-top: 0;
+}
+
+.medium .content h6 {
+	font-family: Ubuntu;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	color: #f2f2f2;
+	margin-bottom: 10px;
+	margin-top: 0;
+}
+
+.medium .fav {
+	position: absolute;
+	top: 25px;
+	right: 25px;
+	cursor: pointer;
+}
+
+.medium .fav i {
+	color: white;
+}
+
+.medium:hover {
+	transform: scale(1.05);
+}
+
+.medium:hover {
+	background-position: top;
+}
+
+
+.hard .card-word{
+  text-align: center;
+  padding-top: 15%;
+}
+.hard h1{
+  color: white;
+}
+.hard .content {
+	position: absolute;
+	bottom: 10px;
+	left: 25px;
+}
+
+.hard .content h4 {
+	font-family: Ubuntu;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	color: #f2f2f2;
+	margin-bottom: 10px;
+	margin-top: 0;
+}
+
+.hard .content h6 {
+	font-family: Ubuntu;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	color: #f2f2f2;
+	margin-bottom: 10px;
+	margin-top: 0;
+}
+
+.hard .fav {
+	position: absolute;
+	top: 25px;
+	right: 25px;
+	cursor: pointer;
+}
+
+.hard .fav i {
+	color: white;
+}
+
+.hard:hover {
+	transform: scale(1.05);
+}
+
+.hard:hover {
+	background-position: top;
 }

@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AdminService } from 'src/app/services/admin.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GetHeaderFromJoin } from 'src/app/models/GetHeaderFromJoin';
-
+import {$} from 'jquery'
 @Component({
   selector: 'app-problem-header-view',
   templateUrl: './problem-header-view.component.html',
@@ -29,7 +29,7 @@ export class ProblemHeaderViewComponent implements OnInit {
         console.log(sourceType);
       }
     },)
-    this.changeCardColor();
+ 
   }
 
   GetproSource(sourceType,sourceName,){
@@ -45,11 +45,4 @@ export class ProblemHeaderViewComponent implements OnInit {
     this.router.navigate(['/getContent',ProblemName]);
   }
 
-  changeCardColor(){
-    var card = document.querySelector('.cardd');
-
-      card.classList.replace("cardd", "medium");
-
-  
-  }
 }

@@ -2,9 +2,9 @@
  -->
 
 
- <div *ngIf="LoggedToken()==false">
-   <router-outlet></router-outlet>
- </div>
+<div *ngIf="LoggedToken()==false">
+  <router-outlet></router-outlet>
+</div>
 
 
 <div *ngIf="LoggedToken()==true" class="wrapper">
@@ -15,8 +15,8 @@
   <!-- /.navbar -->
 
   <!--SideBar---->
-   <app-side-bar></app-side-bar>
-   <!----->
+  <app-side-bar></app-side-bar>
+  <!----->
 
   <div class="content-wrapper" style="min-height: 800px;padding-top:64px;background-color: white;">
     <!-- Content Header (Page header) -->
@@ -34,54 +34,33 @@
   </div>
 
   <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-light">
+  <div class="container">
+    <div class="row-padding">
+      <div class="col-12">
+      <aside class="control-sidebar control-sidebar-light">
+        <img style="
+    height: 350px;padding-left: 25px;" src="assets/img/fr.jpg" alt="Card Back">
 
-      <input type="button" id="cbtn" class="btn btn-danger btn-lg btn-block signin-btn"  (click)="CpopUp()" value="Create Room" />
-      <input type="button" id="jbtn" class="btn btn-danger btn-lg btn-block signin-btn"  (click)="JpopUp()" value="Join Room" />
+        <div class="roomCJ">
+          <button type="submit" (click)="CreateRoom()" class="outline purple-white">Create Room</button>
 
-        <div id="CpopUp" style="margin-top: 30%;">
-
-          <form [formGroup]="roomForm" (ngSubmit)="CreateRoom()">
-            <h2 style="text-align: center;">Enter Room Name </h2>
-            <hr>
-
-            <div class="form-group">
-              <input type="text" formControlName="roomName"  class="form-control input-lg">
-              <div class="text-danger"
-              *ngIf="!this.roomForm.get('roomName').valid">
-                Enter Room Name
-            </div>
-          </div>
-
-          <button type="submit" class="btn btn-danger btn-lg btn-block signin-btn" [disabled]="!roomForm.valid">Create</button>
-
-          </form>
-
-        </div>
-        <div id="JpopUp" style="margin-top: 30%;">
-
-
-          <form [formGroup]="roomForm" (ngSubmit)="JoinRoom()">
-            <h2 style="text-align: center;">Enter Room Name </h2>
-            <hr>
+          <form [formGroup]="roomForm" (ngSubmit)="joinRoom()">
 
             <div class="form-group">
-              <input type="text" formControlName="roomName"  class="form-control input-lg">
-              <div class="text-danger"
-              *ngIf="!this.roomForm.get('roomName').valid">
-                Enter Room Name
+              <button type="submit" class="outline purple-white" [disabled]="!roomForm.valid">Join Room</button>
+
+              <input class="roomId" formControlName="roomName" type="text" name="fname">
+
+              <div class="text-danger" *ngIf="!this.roomForm.get('roomName').valid&&this.roomForm.touched">
+                Enter Room Code
+              </div>
             </div>
-          </div>
-
-          <button type="submit" class="btn btn-danger btn-lg btn-block signin-btn" [disabled]="!roomForm.valid">Join</button>
-
           </form>
-
         </div>
-        <!-- <a routerLink="/codeEditor" class="nav-link">
-            <p>Code Editor</p>
-          </a> -->
-  </aside>
+      </aside>
+      </div>
+    </div>
+  </div>
   <!-- /.control-sidebar -->
 
 
@@ -92,5 +71,3 @@
   <app-account-login></app-account-login>
   <app-account-register></app-account-register>
 </div> -->
-
-

@@ -83,14 +83,18 @@ JpopUp(){
 
 }
 
-CreateRoom(){
-  this.roomname = this.roomForm.value.roomName;
-  this.router.navigate(['/codeEditor',this.roomname]);
-}
 
-JoinRoom(){
-  this.roomname = this.roomForm.value.roomName;
-  this.router.navigate(['/codeEditor',this.roomname]);
-}
+  ////Create Room//
+  CreateRoom(){
+    var result  =  Math.random().toString(8).substring(2, 6) + Math.random().toString(8).substring(2, 6);
+    console.log(result);
+    this.router.navigate(['/codeEditor',result]);
+  }
+  //Join Room///
+  joinRoom(){
+    this.roomname = this.roomForm.value.roomName;
+    this.router.navigate(['/codeEditor',this.roomname]);
+  }
+
 
 }

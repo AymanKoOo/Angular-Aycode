@@ -186,12 +186,66 @@ p { margin: 0; }
 }
 
 
-.resizable {
-  overflow: scroll;
-  resize: both;
-  max-width: auto;
-  max-height: auto;
+.editor {
+  /* max-width: 980px;
+  max-height: 825px; */
   border: 1px solid black;
-  min-width: 500px;
-  min-height: 500px;
+  /* min-width: 500px;
+  min-height: 500px; */
+  width: auto;
+  height: auto;
 }
+
+.problemDiffuclt{
+  color: #43a086;
+
+}
+.NotRoom{
+
+  font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+.roomCJ button{
+  font-size: 14px;
+  width: 200px;
+  height: 50px;
+  border-width: 2px;
+  border-radius: 22px;
+  cursor: pointer;
+  outline: none;
+  font-weight: 700;
+  color: #664e96;
+  border-color: #664e96;
+  background: white;
+}
+
+.roomCJ{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  text-align: center;
+}
+.roomCJ button:hover {
+  color: white;
+  background: #664e96;
+  border-color: white;
+}
+
+
+.roomId{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  text-align: center;
+  text-align: center;
+  color: #664e96 ;
+  border-style: solid;
+  border:1px solid #664e96;
+  background-color:white;
+  border-radius: 14px;
+  border-color:#664e96 ;
+}
+

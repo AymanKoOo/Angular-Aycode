@@ -1,9 +1,15 @@
-.nav-link:hover{
 
-  border-bottom:3px solid red;
+
+.navbar{
+  font-size: 16px;
+  font-family: fantasy;
 
 }
 
+
+.navbar .nav-item:hover .nav-link{
+  color:red;
+ }
 
 
 .logoo:hover {

@@ -115,22 +115,32 @@ img{
 
 
 .project:hover .front{
+  cursor: pointer;
     transform: translateY(-20%);
 }
 .project:hover .front .project-cover{
+  cursor: pointer;
+
     box-shadow: 0 4px 12px #0008;
 }
 .project:hover .front .project-name{
+  cursor: pointer;
+
     font-size: 2.1rem;
     animation: project-name 80ms forwards;
     -webkit-animation:project-name 80ms forwards;
 }
+
 .project:hover .back{
+  cursor: pointer;
+
     display: block;
     animation: fade-in 400ms ease-out forwards 50ms;
     -webkit-animation: fade-in 400ms ease-out forwards 50ms;
 }
 .project:hover .background{
+  cursor: pointer;
+
     transform: scale(1.2,1.1);
     opacity: 1;
     background: #fff;
@@ -140,12 +150,18 @@ img{
     transition: transform 170ms 50ms cubic-bezier(0,.6,0,1), opacity 100ms linear;
 }
 .project:hover .front .stats{
+  cursor: pointer;
+
     display: none;
 }
 .project:hover .stats{
     margin-top: 25px;
+    cursor: pointer;
+
 }
 .project:hover .stats .tools{
+  cursor: pointer;
+
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -153,13 +169,18 @@ img{
     -webkit-animation: swipe-up 500ms forwards;
 }
 .project:hover .stats .tools p{
+  cursor: pointer;
+
     text-align: center;
     font-family: "Roboto", sans-serif;
     font-size: .95rem;
 }
 .project:hover .stats .tool{
+  cursor: pointer;
+
     width: 42px;
     height: 42px;
+
 }
 
 @keyframes project-name{

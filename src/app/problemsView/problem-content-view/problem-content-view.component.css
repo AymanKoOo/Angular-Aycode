@@ -8,6 +8,7 @@
 	padding: 70px 0;
 }
 .card {
+  cursor: pointer;
 	position: relative;
   width: 180px;
 	height: 169px;
@@ -22,19 +23,27 @@
 .card .card-word{
   text-align: center;
   padding-top: 35%;
+  cursor: pointer;
+
 }
 
 .card h1{
   color: white;
   font-size: 25px;
+  cursor: pointer;
+
 }
 .card .content {
 	position: absolute;
 	bottom: 10px;
-	left: 25px;
+  left: 25px;
+  cursor: pointer;
+
 }
 
 .card .content h4 {
+  cursor: pointer;
+
 	font-family: Ubuntu;
 	font-style: normal;
 	font-weight: bold;
@@ -45,6 +54,8 @@
 }
 
 .card .content h6 {
+  cursor: pointer;
+
 	font-family: Ubuntu;
 	font-style: normal;
 	font-weight: 500;
@@ -55,6 +66,8 @@
 }
 
 .card .fav {
+  cursor: pointer;
+
 	position: absolute;
 	top: 25px;
 	right: 25px;
@@ -66,13 +79,17 @@
 }
 
 .card:hover {
-	transform: scale(1.05);
+  cursor: pointer;
+  transform: scale(1.05);
 }
 
 .card:hover {
-	background-position: top;
+  cursor: pointer;
+  background-position: top;
 }
 
 .h1{
+  cursor: pointer;
+
   color: whitesmoke;
 }

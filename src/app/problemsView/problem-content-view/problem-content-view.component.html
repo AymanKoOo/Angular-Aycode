@@ -1,34 +1,24 @@
 
 
+<div class="container-fluid">
+  <div class="row">
 
-<div class="row">
+    <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2" *ngFor="let GetprobContentJ of GetprobContentJ">
+      <a (click)="getCode(GetprobContentJ['contentName'])" class="project">
+        <div class="card">
 
-  <div class="col-md-4" *ngFor="let GetprobContentJ of GetprobContentJ">
-    <a (click)="getCode(GetprobContentJ['contentName'])" class="project">
-  <div class="card">
-    <!-- <div class="card-header">
-      <div class="card-img"></div>
-      <div class="card-title">
-        <h1>{{GetprobContentJ['contentName']}}</h1>
+          <div class="card-word">
 
-      </div>
+            <h1>{{GetprobContentJ['contentName']}}</h1>
+
+
+          </div>
+        </div>
+      </a>
     </div>
-    <div class="card-body">
-      <h1>{{GetprobContentJ['contentDesc']}}</h1>
-    </div> -->
-    <div class="card-word">
-      <!-- <div class="card-img"></div>
-      <div class="card-title">
-        <h1>{{GetHeaderFromJoin['problemName']}}</h1>
-      </div>
-    </div> -->
-    <h1>{{GetprobContentJ['contentName']}}</h1>
+  </div>
+</div>
 
-    <!-- <div class="card-body">
-      <h1>{{GetHeaderFromJoin['problemName']}}</h1>
-    </div> -->
-  </div>
-  </div>
-  </a>
-  </div>
-  </div>
+
+
+

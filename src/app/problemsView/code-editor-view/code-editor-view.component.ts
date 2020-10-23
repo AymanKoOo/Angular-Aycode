@@ -5,7 +5,6 @@ import { HttpClient } from '@angular/common/http';
 import { Component,ViewChild,OnInit } from '@angular/core';
 import { AdminService } from 'src/app/services/admin.service';
 import { ActivatedRoute, Router } from '@angular/router';
-
 import * as $ from "jquery";
 import 'brace';
 import 'brace/mode/sql';
@@ -52,7 +51,6 @@ export class CodeEditorViewComponent implements OnInit {
   .configureLogging(signalR.LogLevel.Information)
   .build();
   /////////////////
-
   //////
   msgDto: MessageDto = new MessageDto();
   public async start() {
@@ -74,22 +72,23 @@ export class CodeEditorViewComponent implements OnInit {
   groupValue:string="";
   roomForm : FormGroup;
   roomname:string;
+  IsRoom:number;
   //
   contentName:string;
-
+  problemDiff:string;
   ngOnInit(): void {
     this.roomForm = this.fb.group({
       roomName:['',Validators.required],
 
     });
 
-
+    this.IsRoom==0;
     this.contentByname=null;
-
     this.activateRoute.paramMap.subscribe(param=>{
       this.roomname =param.get('roomID');
       console.log(this.roomname);
       this.contentName = param.get('contentName');
+      this.problemDiff = param.get('headerName');
       if(this.contentName!=null){
       this.getContentDetails(this.contentName);
       }
@@ -97,6 +96,7 @@ export class CodeEditorViewComponent implements OnInit {
        //this.createEditorRoom(this.roomname);
       ////////////////////
       });
+
       //Must add groups in database when created
       //and aad all users connected to it , when they leave delete group
       //button to leave group
@@ -170,6 +170,21 @@ export class CodeEditorViewComponent implements OnInit {
    }
   }
 
+
+  ////Create Room//
+  CreateRoom(){
+    var result  =  Math.random().toString(8).substring(2, 6) + Math.random().toString(8).substring(2, 6);
+    console.log(result);
+    this.router.navigate(['/codeEditor',result]);
+  }
+  //Join Room///
+  joinRoom(){
+    this.roomname = this.roomForm.value.roomName;
+    this.router.navigate(['/codeEditor',this.roomname]);
+  }
+
+
+  ///
   ///Get Code///
   getContentDetails(contentName){
     this.service.GetprobContentByName(contentName).subscribe(sucess=>{

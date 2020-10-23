@@ -1,134 +1,110 @@
-<header>
 
-  <div class="navBar">
-    <nav class="navbar  fixed-top navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">  <img style="
-        height: 100px;padding-top: 8px;" src="assets/img/a.PNG" alt="Card Back"></a>
+  <nav class="navbar fixed-top navbar-expand-sm navbar-light bg-light">
+    <a class="navbar-brand" href="#"> <img style="
+        height: 70px;" src="assets/img/logo.png"   alt="Card Front">
+        <img style="
+        height: 70px;" src="assets/img/logo2.png" class="img-top mt-1"  alt="Card Back">
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
+    </a>
 
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact Us</a>
-          </li>
 
-        </ul>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['../login']">Login</a>
-          </li>
 
-          <li class="nav-item" >
-            <a class="nav-link" [routerLink]="['../register']" style="color:#d51500" href="#">Signup</a>
-          </li>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-        </ul>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact Us</a>
+        </li>
+
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <!-- <a class="nav-link" [routerLink]="['../login']">Login</a> -->
+
+          <input type="button" class="btn btn-outline-danger btn-block mr-1" [routerLink]="['../login']"  value="Login">
+        </li>
+
+        <li class="nav-item">
+          <!-- <a class="nav-link" [routerLink]="['../register']" style="color:red" href="#">Signup</a> -->
+           <input type="button" class="btn btn-outline-danger btn-block ml-3" [routerLink]="['../register']"  value="Signup">
+
+
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+<div class="container-fluid" style=" padding-top: 13%; background-color: black;">
+  <div class="row padding">
+    <div class="col-12">
+      <div class="intro">
+        <div class="midtxt pt-5">
+          <h1>Complete Reference</h1>
+        </div>
+        <div class="Umidtxt pt-2">
+          <h1>To Competitive Programming </h1>
+        </div>
+        <div class="pt-4 pb-5">
+          <!-- <input type="button" [routerLink]="['../login']" class="StartBtn" value="Get Started">
+          </div> -->
+            <div id="testbutton" [routerLink]="['../login']"></div>
+        </div>
       </div>
-    </nav>
-
-
+    </div>
   </div>
-
-  <div class="intro">
-    <div class="midtxt">Complete Reference </div>
-    <div class="Umidtxt">To Competitive Programming </div>
-    <input type="button" [routerLink]="['../login']" class="StartBtn" value="Get Started">
-  </div>
-
-</header>
-
-<article>
-
-  <div class="row">
-    <div class="col-sm-7">
-
-      <div class="artContent">
-
-        <div class="Hcontent">Simplifed Solutions for most coding problems written by HackerRank , LeetCode and CodeForces </div>
-        <div class="Bcontent">We have so many soultions for problems In the 13 years and 263 days that we’ve been building Todoist, we’ve never considered selling out or becoming acquired.
-
-          Our team is committed to staying independent and earning your trust for as long as you need our apps. </div>
-
-      </div>
+</div>
 
 
+<div  class="container-fluid pt-5">
+  <div class="row padding">
+    <div class="col-sm-12 col-md-12 col-lg-7">
 
+      <div class="Hcontent">
+        <h1>Simplifed Solutions for most coding problems written by
+        HackerRank , LeetCode and CodeForces</h1> </div>
+      <div class="Bcontent pt-4">We have so many soultions for problems In the 13 years and
+        263 days that we’ve been building Todoist, we’ve never considered selling out or becoming acquired.
+
+        Our team is committed to staying independent and earning your trust for as long as you need our apps. </div>
     </div>
 
 
-    <div class="col-sm-5">
+    <div class="col-lg-5">
 
-        <div class="artPic">
-          <img  style="
-          height: 350px" src="assets/img/we.png" alt="Card Back">
+      <img style="max-width: 100%;" src="assets/img/we.png" alt="Card Back">
+
+    </div>
+  </div>
+
+</div>
+
+
+
+<hr class="my-4">
+<div class="container-fluid">
+
+  <div class="row padding">
+    <div class="col-sm-12 col-md-12 col-lg-7">
+
+
+      <div class="Hcontent "><h1>Stuck while solving a problem?</h1></div>
+      <div class="Bcontent pt-4">Create a room , invite your friends to help you , now
+        you can chat with friends only but
+        Voice , Video calls Will be added soon
       </div>
-
-
+    </div>
+    <div class="col-lg-5">
+      <img style="max-width: 100%; height: auto;" src="assets/img/fr.jpg" alt="Card Back">
     </div>
 
   </div>
 
-  <div class="row">
-    <div class="col-sm-7">
-
-      <div class="artContent">
-
-        <div class="Hcontent">Ace Code Editor</div>
-        <div class="Bcontent">The Code Editor supports the following languages<br/> c++ , JAVA , C# and Python</div>
-
-      </div>
-
-
-
-    </div>
-
-
-    <div class="col-sm-5">
-
-        <div class="artPic">
-          <img  style="
-          height: 350px" src="assets/img/e.jpg" alt="Card Back">
-      </div>
-
-
-    </div>
-
-  </div>
-
-  <div class="row">
-    <div class="col-sm-7">
-
-      <div class="artContent">
-
-        <div class="Hcontent">Stuck while solving a problem?</div>
-        <div class="Bcontent">Create a room , invite your friends to help you , now you can chat with friends only but
-           Voice , Video calls Will be added soon </div>
-
-      </div>
-
-    </div>
-
-
-    <div class="col-sm-5">
-
-        <div class="artPic">
-          <img  style="
-          height: 500px" src="assets/img/fr.jpg" alt="Card Back">
-      </div>
-
-
-    </div>
-
-  </div>
-</article>
-
-<footer>
-
-  <div class="license">
-
-  </div>
-
-</footer>
+</div>
