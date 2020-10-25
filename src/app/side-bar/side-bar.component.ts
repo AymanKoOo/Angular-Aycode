@@ -20,11 +20,11 @@ IsAdmin:IsAdmin;
   }
 
   IsAdminn(){
-    this.admin.IsAdmin().subscribe(sucess=>{
-      this.IsAdmin=sucess;
-      this.AdminCheck=this.IsAdmin.IsAdminn;
-    }),err=>{
-      console.log(err);
-    }
+    // this.admin.IsAdmin().subscribe(sucess=>{
+    //   this.IsAdmin=sucess;
+    //   this.AdminCheck=this.IsAdmin.IsAdminn;
+    // }),err=>{
+    //   console.log(err);
+    // }
 }
 }

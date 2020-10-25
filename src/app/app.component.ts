@@ -29,13 +29,9 @@ ngOnInit(): void {
   this.roomForm = this.fb.group({
     roomName:['',Validators.required],
   });
-  if(localStorage.getItem('token')!=null){
-    this.IsAdminn();
- }
 
 }
-////
-
+///
 LoggedToken(){
   if(localStorage.getItem('token')!=null){
     return true;
@@ -45,15 +41,15 @@ LoggedToken(){
   }
 }
 
-IsAdminn(){
-  this.admin.IsAdmin().subscribe(sucess=>{
-    this.IsAdmin=sucess;
-    this.AdminCheck=this.IsAdmin.IsAdminn;
+// IsAdminn(){
+//   this.admin.IsAdmin().subscribe(sucess=>{
+//     this.IsAdmin=sucess;
+//     this.AdminCheck=this.IsAdmin.IsAdminn;
 
-  }),err=>{
-    console.log(err);
-  }
-}
+//   }),err=>{
+//     console.log(err);
+//   }
+// }
 
 
 

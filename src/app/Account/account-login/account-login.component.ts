@@ -74,12 +74,12 @@ export class AccountLoginComponent implements OnInit {
 
    if(this.userForm.valid){
       this.validlogin();
-      console.log(this.userForm);
+      //console.log(this.userForm);
       this.service.UserLoginJWT(this.logMod).subscribe(sucess=>{
        localStorage.setItem('token',sucess.token)
       console.log("logged");
 
-  this.router.navigate(['/home']);
+      this.router.navigate(['/home']);
       },error=>console.log(error));
 
   }

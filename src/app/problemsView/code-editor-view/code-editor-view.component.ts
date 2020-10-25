@@ -35,8 +35,8 @@ export class CodeEditorViewComponent implements OnInit {
   }
 
   constructor(private service:AdminService,private activateRoute:ActivatedRoute,private router:Router,private http:HttpClient,private fb:FormBuilder) {
+  }
 
-   }
 
   contentByname:contentByname;
   messageValidate={
@@ -82,6 +82,7 @@ export class CodeEditorViewComponent implements OnInit {
 
     });
 
+
     this.IsRoom==0;
     this.contentByname=null;
     this.activateRoute.paramMap.subscribe(param=>{
@@ -90,8 +91,9 @@ export class CodeEditorViewComponent implements OnInit {
       this.contentName = param.get('contentName');
       this.problemDiff = param.get('headerName');
       if(this.contentName!=null){
-      this.getContentDetails(this.contentName);
+       this.getContentDetails(this.contentName);
       }
+
       ///Created The Room///
        //this.createEditorRoom(this.roomname);
       ////////////////////
@@ -101,6 +103,8 @@ export class CodeEditorViewComponent implements OnInit {
       //and aad all users connected to it , when they leave delete group
       //button to leave group
     if(this.contentName==null){
+
+
     ///Connection Start////
     this.connection.onclose(async () => {
       await this.start();
@@ -158,16 +162,25 @@ export class CodeEditorViewComponent implements OnInit {
       }
     })
     this.start();
-
+    this.send();
     $("#messageee").on('keypress',function(e) {
       if(e.which == 13) {
         // Trigger the button element with a click
         //this.send();
         console.log("aa");
       }
-  });
+   });
 
    }
+
+   setTimeout(()=> {
+    this.createRooom(this.roomname);
+
+    this.connection.invoke("SendMessageToGroup",this.groupValue,this.msgDto.msgText).catch(function (err) {
+       console.log(err);
+    });
+}, 0);
+
   }
 
 
@@ -181,9 +194,8 @@ export class CodeEditorViewComponent implements OnInit {
   joinRoom(){
     this.roomname = this.roomForm.value.roomName;
     this.router.navigate(['/codeEditor',this.roomname]);
+
   }
-
-
   ///
   ///Get Code///
   getContentDetails(contentName){
@@ -205,7 +217,7 @@ createRooom(roomID:string){
       console.log(err);
   });
   console.log("Created Room");
-  console.log(this.roomname);
+  console.log(this.groupValue);
 }
 createEditorRoom(roomID:string){
   this.groupValue = roomID;
@@ -219,6 +231,7 @@ createEditorRoom(roomID:string){
 
 public change() {
   if(this.contentName==null){
+
     this.createEditorRoom(this.roomname);
     this.connection.invoke("SendMessageToGroupEditor",this.groupValue,this.msgDto.code).catch(function (err) {
       console.log(err);
@@ -226,13 +239,14 @@ public change() {
   }
 }
 
-send() {
+public send() {
   //if(this.group=="All"){
   //  this.connection.invoke("SendMessageToAll",this.msgDto.msgText).catch(function (err) {
 //console.log(err)});
  // }
 
   this.createRooom(this.roomname);
+
   this.connection.invoke("SendMessageToGroup",this.groupValue,this.msgDto.msgText).catch(function (err) {
      console.log(err);
   });
