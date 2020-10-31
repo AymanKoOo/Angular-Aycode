@@ -50,7 +50,7 @@ style="min-height: 200px; width:100%; overflow: auto;"></div> -->
         <hr>
         <br>
         <img style="
-        height: 450px;padding-left: 20%;" src="assets/img/fr.jpg" alt="Card Back">
+        height: 450px;" src="assets/img/fr.jpg" alt="Card Back">
 
         <div class="roomCJ">
           <button type="submit" (click)="CreateRoom()" class="outline purple-white">Create Room</button>
@@ -75,16 +75,16 @@ style="min-height: 200px; width:100%; overflow: auto;"></div> -->
 
           <div class="inviteMsg">
             <h2>Room ID is {{this.roomname}} Share it with you friends</h2>
-         
-          </div>
 
+          </div>
+<!--
           <select id="people" name="people" [(ngModel)]="group" class="form-control">
             <option *ngFor="let p of peoplee" [value]="p.name">
               {{p.name}}
             </option>
           </select>
 
-          <input type="button" id="sendButton" (click)="send()" value="Send Message" />
+          <input type="button" id="sendButton" (click)="send()" value="Send Message" /> -->
           <div id="messages"></div>
           <div id="live-chat">
 
@@ -93,8 +93,6 @@ style="min-height: 200px; width:100%; overflow: auto;"></div> -->
               <input type="button" class="chat-close" (click)="toggleChat()" value="x" />
 
               <h4>Room Chat</h4>
-
-              <span class="chat-message-counter">3</span>
 
             </header>
 

@@ -104,6 +104,16 @@ export class CodeEditorViewComponent implements OnInit {
       //button to leave group
     if(this.contentName==null){
 
+      function formatAMPM(date) {
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var ampm = hours >= 12 ? 'pm' : 'am';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // the hour '0' should be '12'
+        minutes = minutes < 10 ? '0'+minutes : minutes;
+        var strTime = hours + ':' + minutes + ' ' + ampm;
+        return strTime;
+      }
 
     ///Connection Start////
     this.connection.onclose(async () => {
@@ -124,13 +134,12 @@ export class CodeEditorViewComponent implements OnInit {
         //newDiv.classList.add("chat-message clearfix");
         newDiv.className = 'chat-message clearfix';
         newDiv.innerHTML = `
-        <img src="http://gravatar.com/avatar/2c0ad52fc5943b78d6abe069cc08f320?s=32" alt="" width="32" height="32">
 
+        <img src="https://img.icons8.com/cotton/128/000000/user-male--v1.png" width="32" height="32"/>
         <div class="chat-message-content clearfix">
 
-            <span class="chat-time">13:37</span>
-
-            <h5>Marco Biedermann</h5>
+            <span class="chat-time">`+
+            formatAMPM(new Date)+`</span>
 
             <p id="messageText">`+this.msgDto.msgText+`</p>
 

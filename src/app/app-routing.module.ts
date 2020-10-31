@@ -24,6 +24,10 @@ import { UsersComponent } from './Admin/users/users.component';
 import { ProblemTypeViewComponent } from './problemsView/problem-type-view/problem-type-view.component';
 import { ProblemHeaderViewComponent } from './problemsView/problem-header-view/problem-header-view.component';
 import { ProblemContentViewComponent } from './problemsView/problem-content-view/problem-content-view.component';
+import { verify } from 'crypto';
+
+import { VerifyComponent } from './verify/verify.component';
+
 
 const routes: Routes = [
 {path: '', component: FirstPageComponent,pathMatch:'full'},
@@ -68,6 +72,9 @@ const routes: Routes = [
 
 {path: 'codeEditor/:roomID', component: CodeEditorViewComponent,canActivate:[AuthGuard]},
 {path: 'codeEditor/:roomID', component: CodeEditorViewComponent,canActivate:[AuthGuard]},
+
+{path: 'verify', component: VerifyComponent},
+
 
 ]
 

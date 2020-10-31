@@ -61,7 +61,11 @@
   position: absolute;
   width: auto;
 }
-
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 .roomCJ{
   padding-top: 20px;
 }
@@ -80,7 +84,7 @@
 }
 
 .roomCJ{
-  margin-top: 50px;
+  margin-top: auto;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
@@ -93,7 +97,7 @@
 }
 
 .roomId{
-  margin-top: 50px;
+  margin-top: auto;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
@@ -107,10 +111,11 @@
   border-color:#664e96 ;
 }
 
-@media only screen and (max-width: 600px) {
-.control-sidebar{
-  width: 100%;
-}
-}
 
+@media only screen and (max-width: 1200px) {
+  .control-sidebar{
+    width: 100%;
+  }
+
+}
 

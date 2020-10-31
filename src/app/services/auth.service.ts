@@ -65,4 +65,8 @@ export class AuthService {
     return this.http.get('http://localhost:50455/Account/CheckUserClaims/'+email+'&'+role,{ withCredentials:true}).pipe();
   }
 
+  verify(id:string,token:string){
+    return this.http.get('http://localhost:50455/Account/RegisterationConfirm?ID='+id+'&Token='+token,{ withCredentials:true}).pipe();
+  }
+
 }

@@ -182,9 +182,13 @@ p { margin: 0; }
 
 .inviteMsg>h2{
 
-    color: #a0252b;
+    color: black;
 }
-
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .editor {
   /* max-width: 980px;

@@ -3,6 +3,7 @@ import { RegisterServiceService } from './../../services/register-service.servic
 import { RegisterModel } from './../../models/register-models';
 import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormBuilder, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-account-register',
   templateUrl: './account-register.component.html',
@@ -10,7 +11,7 @@ import {FormGroup,FormBuilder, Validators} from '@angular/forms';
 })
 export class AccountRegisterComponent implements OnInit {
 
-  constructor(private fb:FormBuilder,private service:RegisterServiceService) { }
+  constructor(private fb:FormBuilder,private service:RegisterServiceService,private router:Router) { }
 
   userForm : FormGroup;
   reg: RegisterModel;
@@ -61,10 +62,13 @@ export class AccountRegisterComponent implements OnInit {
       this.validRegisterModel();
       this.service.Register(this.reg).subscribe(sucess=>{
 
-        alert("Registeration success");
+        console.log(sucess);
 
-      },error=>console.log(error));
 
+      },error=>{
+        console.log(error);
+        this.router.navigate(['/login']);
+      });
     }
   }
 

@@ -36,6 +36,7 @@ import { AceEditorModule } from 'ng2-ace-editor';
 import { ChatviewComponent } from './chatview/chatview.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { FirstPageComponent } from './first-page/first-page.component';
+import { VerifyComponent } from './verify/verify.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +64,8 @@ import { FirstPageComponent } from './first-page/first-page.component';
     ChatviewComponent,
     SideBarComponent,
     FirstPageComponent,
-
+    VerifyComponent,
+ 
   ],
   imports: [
     AgGridModule.withComponents([]),
