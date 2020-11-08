@@ -180,7 +180,7 @@ export class CodeEditorViewComponent implements OnInit {
     this.createRooom(this.roomname);
 
     this.connection.invoke("SendMessageToGroup",this.groupValue,this.msgDto.msgText).catch(function (err) {
-       console.log(err);
+       
     });
 }, 0);
 
