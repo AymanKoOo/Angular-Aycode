@@ -29,7 +29,7 @@ export class AdminService {
 
   constructor(private http:HttpClient) { }
 
-  baseUrl='http://localhost:50455/api/Admin/';
+  baseUrl='https://aycodeapi.azurewebsites.net/api/Admin/';
    headers = new HttpHeaders().set(
       "Authorization",
       "Bearer " + localStorage.getItem('token')
@@ -67,7 +67,7 @@ export class AdminService {
   GetAllprobSource():Observable<FprobSourceModel[]>{
     return this.http.get<FprobSourceModel[]>(this.baseUrl+'GetAllprobSource',{headers:this.headers,withCredentials:true});
   }
-  
+
   GetAllprobSourceUser():Observable<probSourceModel[]>{
     return this.http.get<probSourceModel[]>(this.baseUrl+'GetAllprobSource',{headers:this.headers}).pipe();
   }

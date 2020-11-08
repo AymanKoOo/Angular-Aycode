@@ -16,7 +16,7 @@ export class ProblemHeaderViewComponent implements OnInit {
   GetHeaderFromJoin:GetHeaderFromJoin[];
   sourceName:string;
   ngOnInit(): void {
-  console.log("aa");
+
     this.GetHeaderFromJoin=null;
 
     this.activateRoute.paramMap.subscribe(param=>{
@@ -25,17 +25,15 @@ export class ProblemHeaderViewComponent implements OnInit {
       var sourceType=param.get('sourceType');
       this.GetproSource(sourceType,this.sourceName);
       if(this.sourceName&&sourceType){
-        console.log(this.sourceName);
-        console.log(sourceType);
+
       }
     },)
- 
+
   }
 
   GetproSource(sourceType,sourceName,){
       this.service.GetprobHeaderJ(sourceType,sourceName).subscribe(sucess=>{
         this.GetHeaderFromJoin = sucess;
-        console.log(sucess);
     },err=>{
         console.log(err);
     })

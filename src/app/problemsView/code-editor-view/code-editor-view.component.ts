@@ -31,7 +31,6 @@ export class CodeEditorViewComponent implements OnInit {
   options:any = {maxLines: 1000, printMargin: false};
 
   onChange(code) {
-      console.log("new code", code);
   }
 
   constructor(private service:AdminService,private activateRoute:ActivatedRoute,private router:Router,private http:HttpClient,private fb:FormBuilder) {
@@ -56,7 +55,6 @@ export class CodeEditorViewComponent implements OnInit {
   public async start() {
     try {
       await this.connection.start();
-      console.log("connected");
     } catch (err) {
       console.log(err);
       setTimeout(() => this.start(), 5000);
@@ -87,7 +85,6 @@ export class CodeEditorViewComponent implements OnInit {
     this.contentByname=null;
     this.activateRoute.paramMap.subscribe(param=>{
       this.roomname =param.get('roomID');
-      console.log(this.roomname);
       this.contentName = param.get('contentName');
       this.problemDiff = param.get('headerName');
       if(this.contentName!=null){
@@ -123,7 +120,6 @@ export class CodeEditorViewComponent implements OnInit {
 
     this.connection.on("ReceiveCode", (code) => {
       this.msgDto.code = code;
-      console.log(code);
     });
 
     this.connection.on("ReceiveText", (text) => {
@@ -158,7 +154,6 @@ export class CodeEditorViewComponent implements OnInit {
     customObj.id = this.k;
     customObj.name = connectionId;
     this.peoplee.push(customObj);
-    console.log(this.peoplee.length);
     });
 
     this.connection.on("UserDisconnected",(connectionId)=>{
@@ -176,7 +171,6 @@ export class CodeEditorViewComponent implements OnInit {
       if(e.which == 13) {
         // Trigger the button element with a click
         //this.send();
-        console.log("aa");
       }
    });
 
@@ -196,7 +190,6 @@ export class CodeEditorViewComponent implements OnInit {
   ////Create Room//
   CreateRoom(){
     var result  =  Math.random().toString(8).substring(2, 6) + Math.random().toString(8).substring(2, 6);
-    console.log(result);
     this.router.navigate(['/codeEditor',result]);
   }
   //Join Room///
@@ -225,8 +218,6 @@ createRooom(roomID:string){
   .catch(function (err) {
       console.log(err);
   });
-  console.log("Created Room");
-  console.log(this.groupValue);
 }
 createEditorRoom(roomID:string){
   this.groupValue = roomID;
@@ -234,8 +225,6 @@ createEditorRoom(roomID:string){
   .catch(function (err) {
       console.log(err);
   });
-  console.log("Created Room for editor");
-  console.log(this.roomname);
 }
 
 public change() {
@@ -259,7 +248,6 @@ public send() {
   this.connection.invoke("SendMessageToGroup",this.groupValue,this.msgDto.msgText).catch(function (err) {
      console.log(err);
   });
-  console.log(this.msgDto.msgText.length);
 
   // else{
   //   this.connection.invoke("SendMessageToUser",this.group,this.msgDto.msgText).catch(function (err) {

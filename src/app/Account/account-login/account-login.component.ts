@@ -77,7 +77,6 @@ export class AccountLoginComponent implements OnInit {
       //console.log(this.userForm);
       this.service.UserLoginJWT(this.logMod).subscribe(sucess=>{
        localStorage.setItem('token',sucess.token)
-      console.log("logged");
 
       this.router.navigate(['/home']);
       },error=>console.log(error));

@@ -25,7 +25,6 @@ export class ProblemContentViewComponent implements OnInit {
   GetproContent(headerName){
 
     this.service.GetprobContentJ(headerName).subscribe(sucess=>{
-      console.log(sucess);
       this.GetprobContentJ=sucess;
     },err=>{
       console.log(err);
@@ -33,9 +32,7 @@ export class ProblemContentViewComponent implements OnInit {
   };
 
  getCode(contentName:string){
-  console.log("here");
-  console.log(contentName);
-  console.log(this.headerName);
+
 
   this.router.navigate(['/getContentCode',contentName,this.headerName]);
 

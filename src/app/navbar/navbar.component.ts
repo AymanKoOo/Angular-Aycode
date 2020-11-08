@@ -27,7 +27,6 @@ export class NavbarComponent implements OnInit {
 
       // },err=>console.log(err))
       localStorage.clear();
-      console.log("loged out");
   }
 
 

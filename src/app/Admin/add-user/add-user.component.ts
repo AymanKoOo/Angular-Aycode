@@ -50,7 +50,7 @@ export class AddUserComponent implements OnInit {
     }
 
   ngOnInit(){
-   
+
     this.buttontitle="Add new user";
     this.title="register;"
     this.userData=null;
@@ -107,7 +107,6 @@ export class AddUserComponent implements OnInit {
 
   AddUserData(){
     if(this.userData!=null){
-      console.log(this.userData);
       this.userForm.setValue({
         userName:this.userData.userName,
         email:this.userData.email,
@@ -133,10 +132,8 @@ export class AddUserComponent implements OnInit {
       this.user.emailConfirmed = this.userForm.value.emailConfirmed;
 
       this.user.email = this.userForm.value.email;
-      console.log(this.user);
 
       this.adminSr.AddUsers(this.user).subscribe(s=>{
-        console.log("added");
       },err=>{
         console.log(err);
       })
@@ -159,7 +156,6 @@ export class AddUserComponent implements OnInit {
 
       this.adminSr.EditUseRTwo(this.editUserData).subscribe(succ=>{
 
-        console.log("done");
 
       },err=>{
           console.log(err);
@@ -172,7 +168,6 @@ export class AddUserComponent implements OnInit {
     const name = this.userForm.value.userName;
     if(name!=null && name!='' && this.userForm.get('userName').touched&&!this.isEditMode){
       this.service.IsUserNameExist(name).subscribe(success=>{
-        console.log("user name exist")
         this.messageValidate.userName.userFound="user name used"
       },ex=>console.log(ex));
       return true;
@@ -187,7 +182,6 @@ IsEmailExist(){
   const email = this.userForm.value.email;
   if(email!=null && email!='' && this.userForm.get('email').touched&&!this.isEditMode){
     this.service.IsEmailExist(email).subscribe(success=>{
-      console.log("email exist")
 
       this.messageValidate.email.emailFound="email used"
     },ex=>console.log(ex));

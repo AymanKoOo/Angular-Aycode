@@ -29,7 +29,6 @@ export class ProblemTypeViewComponent implements OnInit {
   GetproSource(){
     this.service.GetAllprobType().subscribe(sucess=>{
       this.probTypes=sucess;
-      console.log(this.probTypes);
     },err=>{
       console.log(err);
     })

@@ -62,7 +62,6 @@ export class AccountRegisterComponent implements OnInit {
       this.validRegisterModel();
       this.service.Register(this.reg).subscribe(sucess=>{
 
-        console.log(sucess);
 
 
       },error=>{
@@ -99,7 +98,6 @@ export class AccountRegisterComponent implements OnInit {
       const name = this.userForm.value.userName;
       if(name!=null && name!='' && this.userForm.get('userName').touched){
         this.service.IsUserNameExist(name).subscribe(success=>{
-          console.log("user name exist")
           this.messageValidate.userName.userFound="user name used"
         },ex=>console.log(ex));
         return true;
@@ -114,7 +112,6 @@ export class AccountRegisterComponent implements OnInit {
     const email = this.userForm.value.email;
     if(email!=null && email!='' && this.userForm.get('email').touched){
       this.service.IsEmailExist(email).subscribe(success=>{
-        console.log("email exist")
 
         this.messageValidate.email.emailFound="email used"
       },ex=>console.log(ex));

@@ -11,11 +11,11 @@ import { Observable, Subject } from 'rxjs';
 export class ChatServiceService {
 
   //open connection
-  private  connection: any = new signalR.HubConnectionBuilder().withUrl("http://localhost:50455/chatsocket")   // mapping to the chathub as in startup.cs
+  private  connection: any = new signalR.HubConnectionBuilder().withUrl("https://aycodeapi.azurewebsites.net/chatsocket")   // mapping to the chathub as in startup.cs
   .configureLogging(signalR.LogLevel.Information)
   .build();
 
-  readonly POST_URL = "http://localhost:50455/api/chat/send"
+  readonly POST_URL = "https://aycodeapi.azurewebsites.net/api/chat/send"
 
   private receivedMessageObject: MessageDto = new MessageDto();
   private sharedObj = new Subject<MessageDto>();

@@ -25,7 +25,7 @@ export class VerifyComponent implements OnInit {
 
       if(this.userId&&this.token){
         this.Completeverify(this.userId,this.token);
-        console.log("herrrrrrrrrrrrrrrrrr");
+
       }
 
   }
@@ -34,7 +34,6 @@ export class VerifyComponent implements OnInit {
 
     this.serv.verify(id,token).subscribe(succes=>{
 
-      console.log(succes);
 
     },err=>{
       console.log(err);
