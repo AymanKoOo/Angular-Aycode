@@ -1,0 +1,97 @@
+<div class="container">
+
+  <div class="row-padding">
+
+    <div class="col-12">
+
+      <div class="signin-form">
+
+        <form [formGroup]="userForm" (ngSubmit)="register()">
+
+          <img src="assets/img/logoUp.png" alt="User Avatar"  style="margin-left: 30%;">
+
+          <h2>Register</h2>
+
+          <div class="or-seperator"></div>
+          <div class="form-group">
+            <input type="text" formControlName="userName" class="form-control input-lg" id="exampleInputEmail1"
+              aria-describedby="emailHelp" placeholder="User Name"
+              [ngClass]="{'is-invalid':!this.userForm.get('userName').valid && this.userForm.get('userName').touched}"
+              (blur)="IsUserNameExist()">
+
+            <div class="text-danger"
+              *ngIf="!this.userForm.get('userName').valid && this.userForm.get('userName').touched">
+              Enter User Name
+            </div>
+            <div class="text-danger">
+
+              {{messageValidate.userName.userFound}}
+
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <input type="email" formControlName="email" class="form-control input-lg" id="exampleInputEmail1"
+              aria-describedby="emailHelp" placeholder="Enter email"
+              [ngClass]="{'is-invalid':!this.userForm.get('email').valid && this.userForm.get('email').touched}"
+              (blur)="IsEmailExist()">
+
+            <div class="text-danger"
+              *ngIf="!this.userForm.get('email').valid && this.userForm.get('email').errors.required&&this.userForm.get('userName').touched">
+              Enter Email
+            </div>
+            <div class="text-danger"
+              *ngIf="!this.userForm.get('email').valid && this.userForm.get('email').errors.email">
+
+              {{messageValidate.email.notValid}}
+
+            </div>
+            <div class="text-danger">
+
+              {{messageValidate.email.emailFound}}
+
+            </div>
+          </div>
+
+
+          <div class="form-group">
+
+            <input type="password" formControlName="password" class="form-control input-lg" id="exampleInputPassword1"
+              placeholder="Password"
+              [ngClass]="{'is-invalid':!this.userForm.get('password').valid && this.userForm.get('password').touched}">
+            <div class="text-danger"
+              *ngIf="!this.userForm.get('password').valid && this.userForm.get('password').touched">
+              Enter Password
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="password" formControlName="paswordConfirm" class="form-control input-lg" id="paswordConfirm"
+              placeholder="paswordConfirm"
+              [ngClass]="{'is-invalid':!this.userForm.get('paswordConfirm').valid && this.userForm.get('paswordConfirm').touched}">
+            <div class="text-danger"
+              *ngIf="!this.userForm.get('paswordConfirm').valid && this.userForm.get('paswordConfirm').touched">
+              Enter Password
+            </div>
+            <div class="text-danger" *ngIf="isPasswordMatch()">
+              {{messageValidate.passwordConfirm.required}}
+            </div>
+          </div>
+
+
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-danger btn-lg btn-block signin-btn"
+              [disabled]="!userForm.valid">Register</button>
+          </div>
+
+        </form>
+        <div class="text-center small" style="color:red"> Have an account Sign in? <a routerLink="/login"
+            style="color:red">Sign In</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

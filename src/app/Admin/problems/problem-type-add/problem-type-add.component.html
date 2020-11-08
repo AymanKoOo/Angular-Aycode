@@ -1,0 +1,30 @@
+
+    <div class="signin-form">
+      <form [formGroup]="ProbSourceForm" (ngSubmit)="addProbType()">
+        <img src="assets/img/logo.png" alt="User Avatar" class="ml-5 ">
+        <h5>ProblemSource</h5>
+        <div class="or-seperator"><b>or</b></div>
+
+        <div class="form-group">
+          <label for="exampleUserName">Enter Problem Type </label>
+          <input type="text" formControlName="problemTypee" class="form-control input-lg"
+            aria-describedby="emailHelp" placeholder="Enter Problem Source Name"
+            [ngClass]="{'is-invalid':!this.ProbSourceForm.get('problemTypee').valid && this.ProbSourceForm.get('problemTypee').touched}"(blur)="IsourceNameExist()">
+        </div>
+        <div class="form-group">
+          <label for="exampleUserName">Enter Problem Type Description</label>
+          <input type="text" formControlName="problemTDescription" class="form-control input-lg"
+            aria-describedby="emailHelp" placeholder="Enter Problem Source Description"
+            [ngClass]="{'is-invalid':!this.ProbSourceForm.get('problemTDescription').valid && this.ProbSourceForm.get('problemTDescription').touched}"(blur)="IsourceNameExist()">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleUserName">Enter Image</label>
+          <input type="file" formControlName="problemTypeImage" class="form-control input-lg"
+            aria-describedby="emailHelp" placeholder="Enter Image"
+            [ngClass]="{'is-invalid':!this.ProbSourceForm.get('problemTypeImage').valid && this.ProbSourceForm.get('problemTypeImage').touched}"(blur)="IsourceNameExist()">
+        </div>
+        <button type="submit"  class="btn btn-danger btn-lg btn-block signin-btn"  [disabled]="!ProbSourceForm.valid">Add</button>
+      </form>
+    </div>
+

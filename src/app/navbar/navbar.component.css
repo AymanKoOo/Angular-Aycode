@@ -1,0 +1,56 @@
+
+
+.navbar{
+  font-size: 16px;
+  font-family: fantasy;
+
+}
+
+
+.navbar .nav-item:hover .nav-link{
+  color:red;
+ }
+
+
+.logoo:hover {
+
+  background: url("/assets/logob.png") no-repeat;
+
+}
+/* <img src="assets/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image"> */
+/* <img style="  height: 100px;" src="assets/img/logo.png"> */
+
+.logo {
+
+
+
+  position: relative;
+
+  display: inline-block;
+
+}
+
+.logo .img-top {
+
+  display: none;
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  z-index: 99;
+
+}
+
+.logo:hover .img-top {
+
+  display: inline;
+
+}
+
+.control-sidebar{
+  width: 25%;
+}
+

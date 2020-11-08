@@ -1,0 +1,50 @@
+<h1>ii</h1>
+<div>
+  <button type="button" class="btn btn-success mb-3" (click)="AddSoruce()">Add Problem Source</button>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+     <th>Problem Source Name</th>
+
+     <th>Problem Description</th>
+
+     <th>Problem Image</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let Probsource of probSources">
+
+      <td>{{Probsource.sourceName}}</td>
+
+      <td>{{Probsource.sourceDescription}}</td>
+
+      <td>{{Probsource.problemSourceImage}}</td>
+
+
+      <td>
+        <div>
+          <button type="button" (click)="EditprobSource(Probsource.problemSourceID)" class="btn btn-success">Edit</button>
+        </div>
+      </td>
+
+      <td>
+
+
+        <button class="btn btn-danger"
+        mwlConfirmationPopover
+        [popoverTitle]="popoverTitle"
+        [popoverMessage]="popoverMessage"
+        placment="left"
+        (confirm)="DeleteProblemSource(Probsource.problemSourceID)"
+        (cancel)="cancelClicked=true" >
+        Delete
+        </button>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>

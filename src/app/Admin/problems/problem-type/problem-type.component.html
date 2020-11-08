@@ -1,0 +1,49 @@
+<h1>ii</h1>
+<div>
+  <button type="button" class="btn btn-success mb-3" (click)="Addtype()">Add Problem Type</button>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+     <th>Problem Source Name</th>
+
+     <th>Problem Description</th>
+
+     <th>Problem Image</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let probType of probType">
+
+      <td>{{probType.problemTypee}}</td>
+
+      <td>{{probType.problemTDescription}}</td>
+
+      <td>{{probType.problemTypeImage}}</td>
+
+
+      <td>
+        <div>
+          <button type="button" (click)="EditprobType(probType.problemTypeID)" class="btn btn-success">Edit</button>
+        </div>
+      </td>
+
+      <td>
+
+        <button class="btn btn-danger"
+        mwlConfirmationPopover
+        [popoverTitle]="popoverTitle"
+        [popoverMessage]="popoverMessage"
+        placment="left"
+        (confirm)="DeleteProblemType(probType.problemTypeID)"
+        (cancel)="cancelClicked=true" >
+        Delete
+        </button>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>

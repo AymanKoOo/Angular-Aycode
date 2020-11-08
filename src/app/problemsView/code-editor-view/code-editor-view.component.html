@@ -1,0 +1,130 @@
+<!-- <div ace-editor
+[(text)]="text"
+[mode]="'csharp'"
+[theme]="'eclipse'"
+[options]="options"
+[readOnly]="false"
+[autoUpdateContent]="true"
+[durationBeforeCallback]="1000"
+(textChanged)="onChange($event)"
+style="min-height: 200px; width:100%; overflow: auto;"></div> -->
+<!-- <div ace-editor
+[(text)]="text"
+
+[theme]="'twilight'"
+[mode]="'csharp'"
+[options]="options"
+[readOnly]="false"
+[autoUpdateContent]="true"
+[durationBeforeCallback]="1000"
+(textChanged)="onChange($event)"
+style="min-height: 200px; width:100%; overflow: auto;"></div> -->
+
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+
+      <ace-editor class="editor" [(ngModel)]="msgDto.code" [mode]="'csharp'" [text]="code" (keyup)="change()"
+        style="height: 700px;">
+      </ace-editor>
+
+    </div>
+
+
+    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+      <div class="NotRoom" *ngIf="this.contentName!=null">
+        <div class="problemHead">
+          <div class="problemName">
+            <h2>{{this.contentName}}</h2>
+          </div>
+
+          <div class="problemDiffuclt">
+            {{this.problemDiff}}
+          </div>
+
+          The question can be found at leetcode <a target="_blank"
+            href="https://leetcode.com/problems/reverse-integer/">Reverse integer</a>
+        </div>
+
+        <hr>
+        <br>
+        <img style="
+        height: 450px;" src="assets/img/fr.jpg" alt="Card Back">
+
+        <div class="roomCJ">
+          <button type="submit" (click)="CreateRoom()" class="outline purple-white">Create Room</button>
+
+          <form [formGroup]="roomForm" (ngSubmit)="joinRoom()">
+
+            <div class="form-group">
+              <button type="submit" class="outline purple-white" [disabled]="!roomForm.valid">Join Room</button>
+
+              <input class="roomId" formControlName="roomName" type="text" name="fname">
+
+              <div class="text-danger" *ngIf="!this.roomForm.get('roomName').valid&&this.roomForm.touched">
+                Enter Room Code
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+        <div class="Room" *ngIf="this.contentName==null">
+
+          <div class="inviteMsg">
+            <h2>Room ID is {{this.roomname}} Share it with you friends</h2>
+
+          </div>
+<!--
+          <select id="people" name="people" [(ngModel)]="group" class="form-control">
+            <option *ngFor="let p of peoplee" [value]="p.name">
+              {{p.name}}
+            </option>
+          </select>
+
+          <input type="button" id="sendButton" (click)="send()" value="Send Message" /> -->
+          <div id="messages"></div>
+          <div id="live-chat">
+
+            <header class="clearfix">
+
+              <input type="button" class="chat-close" (click)="toggleChat()" value="x" />
+
+              <h4>Room Chat</h4>
+
+            </header>
+
+            <div class="chat">
+
+              <div class="chat-history">
+
+                <div id="message">
+
+
+                </div>
+
+
+              </div> <!-- end chat-history -->
+
+              <form action="#" method="post">
+
+                <fieldset>
+
+                  <input [(ngModel)]="msgDto.msgText" (keyup.enter)="send()" name="message" id="messageee" type="text"
+                    placeholder="Type your message…" autofocus>
+                  <input type="button" (click)="send()" id="send">
+
+                </fieldset>
+
+              </form>
+
+            </div> <!-- end chat -->
+
+          </div> <!-- end live-chat -->
+        </div>
+      </div>
+    </div>
+
+  </div>

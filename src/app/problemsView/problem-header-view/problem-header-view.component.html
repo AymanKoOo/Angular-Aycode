@@ -1,0 +1,66 @@
+<div class="container-fluid">
+<div class="row">
+
+  <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4" *ngFor="let GetHeaderFromJoin of GetHeaderFromJoin">
+    <a (click)="getContent(GetHeaderFromJoin['problemName'])" class="project">
+
+      <div *ngIf=" GetHeaderFromJoin['problemName'] == 'Easy' " class="easy">
+
+          <div class="card-word">
+            <!-- <div class="card-img"></div>
+          <div class="card-title">
+            <h1>{{GetHeaderFromJoin['problemName']}}</h1>
+          </div>
+        </div> -->
+            <h1>{{GetHeaderFromJoin['problemName']}}</h1>
+
+            <!-- <div class="card-body">
+          <h1>{{GetHeaderFromJoin['problemName']}}</h1>
+        </div> -->
+          </div>
+        </div>
+
+
+      <div *ngIf=" GetHeaderFromJoin['problemName'] == 'Medium' " class="medium">
+        <div class="cardd">
+
+          <div class="card-word">
+            <!-- <div class="card-img"></div>
+          <div class="card-title">
+            <h1>{{GetHeaderFromJoin['problemName']}}</h1>
+          </div>
+        </div> -->
+            <h1>{{GetHeaderFromJoin['problemName']}}</h1>
+
+            <!-- <div class="card-body">
+          <h1>{{GetHeaderFromJoin['problemName']}}</h1>
+        </div> -->
+          </div>
+        </div>
+
+      </div>
+
+      <div *ngIf=" GetHeaderFromJoin['problemName'] == 'Hard' " class="hard">
+        <div class="cardd">
+
+          <div class="card-word">
+            <!-- <div class="card-img"></div>
+          <div class="card-title">
+            <h1>{{GetHeaderFromJoin['problemName']}}</h1>
+          </div>
+        </div> -->
+            <h1>{{GetHeaderFromJoin['problemName']}}</h1>
+
+            <!-- <div class="card-body">
+          <h1>{{GetHeaderFromJoin['problemName']}}</h1>
+        </div> -->
+          </div>
+        </div>
+
+      </div>
+
+    </a>
+  </div>
+
+
+</div></div>

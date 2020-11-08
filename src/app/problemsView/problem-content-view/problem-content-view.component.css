@@ -1,0 +1,95 @@
+.body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	padding: 70px 0;
+}
+.card {
+  cursor: pointer;
+	position: relative;
+  width: 180px;
+	height: 169px;
+  background-color:#e45640;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-radius: 25px;
+	margin: 10px;
+	transition: 0.25s ease-in;
+}
+.card .card-word{
+  text-align: center;
+  padding-top: 35%;
+  cursor: pointer;
+
+}
+
+.card h1{
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+
+}
+.card .content {
+	position: absolute;
+	bottom: 10px;
+  left: 25px;
+  cursor: pointer;
+
+}
+
+.card .content h4 {
+  cursor: pointer;
+
+	font-family: Ubuntu;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	color: #f2f2f2;
+	margin-bottom: 10px;
+	margin-top: 0;
+}
+
+.card .content h6 {
+  cursor: pointer;
+
+	font-family: Ubuntu;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	color: #f2f2f2;
+	margin-bottom: 10px;
+	margin-top: 0;
+}
+
+.card .fav {
+  cursor: pointer;
+
+	position: absolute;
+	top: 25px;
+	right: 25px;
+	cursor: pointer;
+}
+
+.card .fav i {
+	color: white;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.card:hover {
+  cursor: pointer;
+  background-position: top;
+}
+
+.h1{
+  cursor: pointer;
+
+  color: whitesmoke;
+}

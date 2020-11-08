@@ -1,0 +1,68 @@
+<div class="signin-form">
+
+      <form [formGroup]="ProbSourceForm" (ngSubmit)="addProbContent()">
+       <img src="assets/img/logo.png" alt="User Avatar" class="ml-5 ">
+
+        <h5>Problem Header</h5>
+
+       <div class="or-seperator"><b>or</b></div>
+
+        <div class="form-group">
+          <label for="exampleUserName">Enter Problem Content Name</label>
+          <input type="text" formControlName="ContentName" class="form-control input-lg"
+            aria-describedby="emailHelp" placeholder="Enter Problem Source Name"
+            [ngClass]="{'is-invalid':!this.ProbSourceForm.get('ContentName').valid && this.ProbSourceForm.get('ContentName').touched}">
+        </div>
+        <div class="form-group">
+          <label for="exampleUserName">Enter Problem Conent Description</label>
+          <input type="text" formControlName="ContentDesc" class="form-control input-lg"
+            aria-describedby="emailHelp" placeholder="Enter Problem Source Description"
+            [ngClass]="{'is-invalid':!this.ProbSourceForm.get('ContentDesc').valid && this.ProbSourceForm.get('ContentDesc').touched}">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleUserName">Enter Image</label>
+          <input type="file" formControlName="ContentIamge" class="form-control input-lg"
+            aria-describedby="emailHelp" placeholder="Enter Image"
+            [ngClass]="{'is-invalid':!this.ProbSourceForm.get('ContentIamge').valid && this.ProbSourceForm.get('ContentIamge').touched}">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleUserName">Enter Date</label>
+          <input type="date" formControlName="ContentDate" class="form-control input-lg"
+            aria-describedby="emailHelp" placeholder="Enter Image"
+            [ngClass]="{'is-invalid':!this.ProbSourceForm.get('ContentDate').valid && this.ProbSourceForm.get('ContentDate').touched}">
+        </div>
+
+
+        <div class="form-group">
+          <label for="exampleUserName">Enter Problem Code</label>
+
+            <textarea formControlName="ContentCode" class="form-control input-lg"
+            aria-describedby="emailHelp" placeholder="Enter Problem Source Description"
+            [ngClass]="{'is-invalid':!this.ProbSourceForm.get('ContentCode').valid && this.ProbSourceForm.get('ContentCode').touched}">
+>Enter Code  here...</textarea>
+
+
+        </div>
+
+
+        <div class="form-group">
+          <label for="exampleUserName">Choose Problem Header</label>
+
+          <select id="probSource" formControlName="HeaderSelect"
+            class="form-control input-lg">
+
+          <option *ngFor="let problemJoin of problemJoin" [value]="problemJoin.problemid">
+
+            {{problemJoin.problemHead}}
+
+          </option>
+
+          </select>
+
+        </div>
+
+        <button type="submit" class="btn btn-danger btn-lg btn-block signin-btn" [disabled]="!ProbSourceForm.valid">Add</button>
+      </form>
+    </div>
