@@ -13,7 +13,7 @@ export class RegisterServiceService {
   constructor(private http:HttpClient) { }
 
 
-  baseUrl='https://aycodeapi.azurewebsites.net/Account/';
+  baseUrl='https://aycodenww.azurewebsites.net/Account/';
   headers={
     headers: new HttpHeaders({
       'Content-Type':'application/json'

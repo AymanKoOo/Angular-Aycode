@@ -58,15 +58,15 @@ export class AuthService {
   }
 
   getRoleByEmail(email:string){
-    return this.http.get('https://aycodeapi.azurewebsites.net/Account/GetRoleName/'+email,{responseType:'text'}).pipe();
+    return this.http.get('https://aycodenww.azurewebsites.net/Account/GetRoleName/'+email,{responseType:'text'}).pipe();
   }
 
   validateUser(email:string,role:string){
-    return this.http.get('https://aycodeapi.azurewebsites.net/Account/CheckUserClaims/'+email+'&'+role,{ withCredentials:true}).pipe();
+    return this.http.get('https://aycodenww.azurewebsites.net/Account/CheckUserClaims/'+email+'&'+role,{ withCredentials:true}).pipe();
   }
 
   verify(id:string,token:string){
-    return this.http.get('https://aycodeapi.azurewebsites.net/Account/RegisterationConfirm?ID='+id+'&Token='+token,{ withCredentials:true}).pipe();
+    return this.http.get('https://aycodenww.azurewebsites.net/Account/RegisterationConfirm?ID='+id+'&Token='+token,{ withCredentials:true}).pipe();
   }
 
 }
