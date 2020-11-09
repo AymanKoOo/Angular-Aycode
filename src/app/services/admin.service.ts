@@ -29,7 +29,7 @@ export class AdminService {
 
   constructor(private http:HttpClient) { }
 
-  baseUrl='https://aycodeapi.azurewebsites.net/api/Admin/';
+  baseUrl='https://aycodenww.azurewebsites.net/api/Admin/';
    headers = new HttpHeaders().set(
       "Authorization",
       "Bearer " + localStorage.getItem('token')
